@@ -1,0 +1,1574 @@
+/*
+ * Copyright (c) 2022, Benichou Software
+ * All rights reserved.
+ *
+ * Redistribution and use in source and binary forms, with or without
+ * modification, are permitted provided that the following conditions are met:
+ *     * Redistributions of source code must retain the above copyright
+ *       notice, this list of conditions and the following disclaimer.
+ *     * Redistributions in binary form must reproduce the above copyright
+ *       notice, this list of conditions and the following disclaimer in the
+ *       documentation and/or other materials provided with the distribution.
+ *     * Neither the name of the author nor the
+ *       names of its contributors may be used to endorse or promote products
+ *       derived from this software without specific prior written permission.
+ *
+ * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND
+ * ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED
+ * WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
+ * DISCLAIMED. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR ANY
+ * DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES
+ * (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;
+ * LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND
+ * ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+ * (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
+ * SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+ *
+ * Purpose : Microsoft Developer Studio resource script
+ */
+
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+#include "afxres.h"
+#undef APSTUDIO_READONLY_SYMBOLS
+
+ /////////////////////////////////////////////////////////////////////////////
+ // Neutral resources
+LANGUAGE LANG_NEUTRAL, SUBLANG_NEUTRAL
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDR_MAINFRAME           ICON                    "res\\ITN Converter.ico"
+IDB_BING                ICON                    "res\\bing.ico"
+IDB_GOOGLE              ICON                    "res\\google.ico"
+IDB_VIAMICHELIN         ICON                    "res\\viamichelin.ico"
+IDB_OSM                 ICON                    "res\\osm.ico"
+IDB_WAZE                ICON                    "res\\waze.ico"
+IDB_HERE                ICON                    "res\\here.ico"
+IDB_TOMTOM              ICON                    "res\\tomtom.ico"
+IDB_GEOPORTAL           ICON                    "res\\geoportal.ico"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+VS_VERSION_INFO VERSIONINFO
+FILEVERSION SOFT_VER_MAJOR, SOFT_VER_MINOR, SOFT_VER_PATCH, SOFT_VER_BUILD
+PRODUCTVERSION SOFT_VER_MAJOR, SOFT_VER_MINOR, SOFT_VER_PATCH, SOFT_VER_BUILD
+FILEFLAGSMASK VS_FFI_FILEFLAGSMASK
+#ifdef _DEBUG
+#if SOFT_VER_BUILD > 0
+FILEFLAGS(VS_FF_PRERELEASE | VS_FF_SPECIALBUILD | VS_FF_DEBUG)
+#else
+FILEFLAGS VS_FF_DEBUG
+#endif
+#else
+#if SOFT_VER_BUILD > 0
+FILEFLAGS(VS_FF_PRERELEASE | VS_FF_SPECIALBUILD)
+#else
+FILEFLAGS 0x0L
+#endif
+#endif
+FILEOS VOS__WINDOWS32
+FILETYPE VFT_APP
+FILESUBTYPE VFT2_UNKNOWN
+BEGIN
+BLOCK "StringFileInfo"
+BEGIN
+BLOCK "040004b0"
+BEGIN
+VALUE "Comments", SOFT_URL "\0"
+VALUE "CompanyName", SOFT_COMPAGNY "\0"
+VALUE "FileDescription", "Itinerary Converter & Planner\0"
+VALUE "FileVersion", STR(SOFT_VER_MAJOR) "," STR(SOFT_VER_MINOR) "," STR(SOFT_VER_PATCH) "," STR(SOFT_VER_BUILD) "\0"
+VALUE "InternalName", INTERNAL_NAME "\0"
+VALUE "LegalCopyright", SOFT_COPYRIGHT "\0"
+VALUE "OriginalFilename", SOFT_NAME "\0"
+VALUE "ProductName", SOFT_NAME "\0"
+VALUE "ProductVersion", STR(SOFT_VER_MAJOR) "," STR(SOFT_VER_MINOR) "," STR(SOFT_VER_PATCH) "," STR(SOFT_VER_BUILD) "\0"
+#if SOFT_VER_BUILD > 0
+VALUE "SpecialBuild", "Release Candidate " STR(SOFT_VER_BUILD) "\0"
+#endif
+END
+END
+BLOCK "VarFileInfo"
+BEGIN
+VALUE "Translation", 0x400, 1200
+END
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_ABOUTBOX DIALOG 0, 0, 212, 68
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "A propos de"
+BEGIN
+ICON            IDR_MAINFRAME, IDC_STATIC, 11, 11, 59, 59, SS_REALSIZEIMAGE
+LTEXT           "soft version", IDC_SOFT_VERSION, 50, 10, 99, 8, SS_NOPREFIX
+LTEXT           SOFT_COPYRIGHT, IDC_STATIC, 50, 33, 99, 8
+PUSHBUTTON      "OK", IDOK, 159, 7, 46, 14, WS_GROUP
+LTEXT           SOFT_COMPAGNY, IDC_STATIC, 50, 21, 99, 8
+PUSHBUTTON      "WebLink", IDC_WEBLINK, 7, 47, 145, 14
+END
+
+IDD_APPEND_FRAME DIALOG 0, 0, 310, 15
+STYLE DS_SETFONT | DS_3DLOOK | DS_CONTROL | WS_CHILD | WS_CLIPSIBLINGS
+FONT 8, "Arial"
+BEGIN
+CONTROL         "IDC_CHECK_APPEND", IDC_CHECK_APPEND, "Button", BS_AUTOCHECKBOX | WS_TABSTOP, 10, 0, 300, 12, WS_EX_TRANSPARENT
+END
+
+IDD_ITNCONVERTER_DIALOG DIALOGEX 0, 0, 312, 261
+STYLE DS_CENTER | WS_MINIMIZEBOX | WS_MAXIMIZEBOX | WS_POPUP | WS_CAPTION | WS_SYSMENU | WS_THICKFRAME
+EXSTYLE WS_EX_APPWINDOW
+CAPTION "Itinerary Converter"
+BEGIN
+PUSHBUTTON      "Quitter", IDOK, 245, 47, 60, 14
+DEFPUSHBUTTON   "Ouvrir", IDOPEN, 245, 28, 60, 14
+PUSHBUTTON      "Exporter", IDEXPORT, 245, 241, 60, 14
+CONTROL         "Static", IDC_FILENAME, "Static", SS_SIMPLE | WS_GROUP, 7, 7, 242, 9, WS_EX_TRANSPARENT
+CONTROL         "List1", IDC_LIST, "SysListView32", LVS_REPORT | LVS_SHOWSELALWAYS | LVS_NOSORTHEADER | WS_BORDER | WS_TABSTOP, 7, 44, 230, 190
+CONTROL         "Enlever les virgules", IDC_CHECK_OPTION, "Button", BS_AUTOCHECKBOX | BS_TOP | BS_MULTILINE | WS_TABSTOP, 250, 200, 50, 27
+GROUPBOX        "Option", IDC_STATIC_OPTIONS, 245, 190, 60, 45
+COMBOBOX        IDC_COMBO_FILEEXPORT, 84, 242, 153, 100, CBS_DROPDOWNLIST | WS_VSCROLL | WS_TABSTOP
+LTEXT           "Output format :", IDC_LABEL_EXPORT, 9, 235, 71, 25, SS_CENTERIMAGE
+COMBOBOX        IDC_COMBO_CUT_ITN, 250, 200, 49, 48, CBS_DROPDOWNLIST | WS_VSCROLL | WS_TABSTOP
+EDITTEXT        IDC_EDIT_CUT_ITN, 275, 215, 24, 12, ES_AUTOHSCROLL | ES_NUMBER, WS_EX_RIGHT
+PUSHBUTTON      "Up", IDC_BUTTON_UP, 245, 66, 25, 17, BS_BITMAP | WS_DISABLED
+PUSHBUTTON      "Down", IDC_BUTTON_DOWN, 245, 86, 25, 17, BS_BITMAP | WS_DISABLED
+PUSHBUTTON      "Add", IDC_BUTTON_ADD, 245, 106, 25, 17, BS_BITMAP
+PUSHBUTTON      "Remove", IDC_BUTTON_REMOVE, 245, 126, 25, 17, BS_BITMAP | WS_DISABLED
+PUSHBUTTON      "Invert", IDC_BUTTON_INVERT, 245, 146, 25, 17, BS_BITMAP | WS_DISABLED
+PUSHBUTTON      "Editor", IDC_BUTTON_EDITOR, 245, 166, 25, 17, BS_BITMAP
+CONTROL         "Static", IDC_STATIC_UP, "Static", SS_LEFTNOWORDWRAP | SS_CENTERIMAGE | WS_GROUP, 268, 66, 43, 17
+CONTROL         "Static", IDC_STATIC_DOWN, "Static", SS_LEFTNOWORDWRAP | SS_CENTERIMAGE | WS_GROUP, 268, 86, 43, 17
+CONTROL         "Static", IDC_STATIC_ADD, "Static", SS_LEFTNOWORDWRAP | SS_CENTERIMAGE | WS_GROUP, 268, 107, 43, 17
+CONTROL         "Static", IDC_STATIC_REMOVE, "Static", SS_LEFTNOWORDWRAP | SS_CENTERIMAGE | WS_GROUP, 268, 127, 43, 17
+CONTROL         "Static", IDC_POINT_NUMBER, "Static", SS_SIMPLE | WS_GROUP, 7, 18, 241, 9, WS_EX_TRANSPARENT
+CONTROL         "Static", IDC_STATIC_INVERT, "Static", SS_LEFTNOWORDWRAP | SS_CENTERIMAGE | WS_GROUP, 268, 147, 43, 17
+CONTROL         "Static", IDC_NAME, "Static", SS_SIMPLE | WS_GROUP, 7, 30, 23, 9, WS_EX_TRANSPARENT
+EDITTEXT        IDC_EDIT_NAME, 34, 28, 203, 12, ES_AUTOHSCROLL
+CONTROL         "Static", IDC_STATIC_EDITOR, "Static", SS_LEFTNOWORDWRAP | SS_CENTERIMAGE | WS_GROUP, 268, 168, 43, 17
+END
+
+IDD_INSERT_MODIFY DIALOGEX 0, 0, 229, 156
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU | WS_THICKFRAME
+EXSTYLE WS_EX_TOOLWINDOW
+CAPTION "Dialog"
+BEGIN
+DEFPUSHBUTTON   "OK", IDOK, 176, 7, 46, 14
+PUSHBUTTON      "Cancel", IDCANCEL, 176, 24, 46, 14
+LTEXT           "Static", IDC_STATIC_COORD_FORMAT, 7, 7, 52, 13, SS_CENTERIMAGE
+LTEXT           "Static", IDC_STATIC_LATITUDE, 7, 24, 52, 13, SS_CENTERIMAGE
+LTEXT           "Static", IDC_STATIC_LONGITUDE, 7, 41, 52, 13, SS_CENTERIMAGE
+LTEXT           "Static", IDC_STATIC_ALTITUDE, 7, 58, 52, 13, SS_CENTERIMAGE
+LTEXT           "Static", IDC_STATIC_ADDRESS, 7, 75, 52, 13, SS_CENTERIMAGE
+LTEXT           "Static", IDC_STATIC_SNIPPET, 7, 92, 52, 13, SS_CENTERIMAGE
+COMBOBOX        IDC_COMBO_COORD_FORMAT, 63, 7, 108, 13, CBS_DROPDOWNLIST | WS_VSCROLL
+EDITTEXT        IDC_EDIT_LATITUDE, 63, 24, 108, 13, ES_RIGHT
+EDITTEXT        IDC_EDIT_LAT_DEG, 87, 24, 17, 13, ES_RIGHT | ES_NUMBER
+LTEXT           "°", IDC_STATIC_LAT_DEG, 106, 24, 8, 11
+EDITTEXT        IDC_EDIT_LAT_DMS_MIN, 110, 24, 17, 13, ES_RIGHT | ES_NUMBER
+EDITTEXT        IDC_EDIT_LAT_DM_MIN, 110, 24, 54, 13, ES_RIGHT
+LTEXT           "'", IDC_STATIC_LAT_MIN, 130, 24, 8, 11
+EDITTEXT        IDC_EDIT_LAT_SEC, 134, 24, 30, 13, ES_RIGHT
+LTEXT           """", IDC_STATIC_LAT_SEC, 166, 24, 8, 11
+COMBOBOX        IDC_COMBO_LAT_NS, 64, 24, 23, 12, CBS_DROPDOWNLIST | CBS_SORT | WS_VSCROLL | WS_TABSTOP
+EDITTEXT        IDC_EDIT_LONGITUDE, 63, 41, 108, 13, ES_RIGHT
+EDITTEXT        IDC_EDIT_LNG_DEG, 88, 41, 17, 13, ES_RIGHT | ES_NUMBER
+LTEXT           "°", IDC_STATIC_LNG_DEG, 106, 41, 8, 11
+EDITTEXT        IDC_EDIT_LNG_DMS_MIN, 110, 41, 17, 13, ES_RIGHT | ES_NUMBER
+EDITTEXT        IDC_EDIT_LNG_DM_MIN, 110, 41, 54, 13, ES_RIGHT
+LTEXT           "'", IDC_STATIC_LNG_MIN, 156, 41, 8, 11
+EDITTEXT        IDC_EDIT_LNG_SEC, 134, 41, 30, 13, ES_RIGHT
+LTEXT           """", IDC_STATIC_LNG_SEC, 166, 41, 8, 11
+COMBOBOX        IDC_COMBO_LNG_WE, 64, 41, 23, 12, CBS_DROPDOWNLIST | CBS_SORT | WS_VSCROLL | WS_TABSTOP
+EDITTEXT        IDC_EDIT_ALTITUDE, 63, 58, 108, 13, ES_RIGHT
+EDITTEXT        IDC_EDIT_ADDRESS, 63, 75, 159, 13, ES_AUTOHSCROLL
+EDITTEXT        IDC_EDIT_SNIPPET, 7, 108, 215, 39, ES_MULTILINE | ES_AUTOVSCROLL | WS_VSCROLL
+END
+
+IDD_DIALOG_EDITOR DIALOGEX 0, 0, 494, 369
+STYLE DS_CENTER | WS_MINIMIZEBOX | WS_MAXIMIZEBOX | WS_POPUP | WS_CAPTION | WS_SYSMENU | WS_THICKFRAME
+CAPTION "Dialog"
+BEGIN
+CONTROL         "List1", IDC_LIST, "SysListView32", LVS_REPORT | LVS_SHOWSELALWAYS | LVS_NOSORTHEADER | WS_BORDER | WS_TABSTOP, 7, 149, 132, 213
+PUSHBUTTON      "Up", IDC_BUTTON_UP, 142, 149, 25, 17, BS_BITMAP | WS_DISABLED
+PUSHBUTTON      "Down", IDC_BUTTON_DOWN, 142, 169, 25, 17, BS_BITMAP | WS_DISABLED
+PUSHBUTTON      "Remove", IDC_BUTTON_REMOVE, 142, 189, 25, 17, BS_BITMAP | WS_DISABLED
+PUSHBUTTON      "Invert", IDC_BUTTON_INVERT, 142, 209, 25, 17, BS_BITMAP | WS_DISABLED
+PUSHBUTTON      "Remove all", IDC_BUTTON_REMOVEALL, 142, 229, 25, 17, BS_BITMAP | WS_DISABLED
+PUSHBUTTON      "Calculate", IDC_BUTTON_CALCULATE, 142, 249, 25, 17, BS_BITMAP | WS_DISABLED
+PUSHBUTTON      "Clear route", IDC_BUTTON_DELROUTE, 142, 269, 25, 17, BS_BITMAP | WS_DISABLED
+PUSHBUTTON      "Show all", IDC_BUTTON_VIEWALL, 142, 289, 25, 17, BS_BITMAP | WS_DISABLED
+PUSHBUTTON      "Optimize", IDC_BUTTON_OPTIMISE, 142, 309, 25, 17, BS_BITMAP | WS_DISABLED
+PUSHBUTTON      "Config", IDC_BUTTON_CONFIG, 142, 329, 25, 17, BS_BITMAP
+PUSHBUTTON      "Print", IDC_BUTTON_PRINT, 142, 349, 25, 17, BS_BITMAP | NOT WS_VISIBLE
+CONTROL         "Static", IDC_POINT_NUMBER, "Static", SS_SIMPLE | WS_GROUP, 7, 137, 62, 9
+CONTROL         "Static", IDC_NAME, "Static", SS_SIMPLE | WS_GROUP, 7, 124, 23, 9
+EDITTEXT        IDC_EDIT_NAME, 32, 122, 130, 12, ES_AUTOHSCROLL
+EDITTEXT        IDC_EDIT_SEARCH, 7, 22, 138, 13, ES_AUTOHSCROLL
+LTEXT           "Static", IDC_STATIC_SEARCH, 7, 10, 113, 10, SS_CENTERIMAGE
+DEFPUSHBUTTON   "Search", IDC_BUTTON_SEARCH, 148, 21, 14, 11, WS_DISABLED
+CONTROL         "List1", IDC_LIST_SEARCH, "SysListView32", LVS_REPORT | LVS_SINGLESEL | LVS_SHOWSELALWAYS | LVS_NOSORTHEADER | WS_BORDER | WS_TABSTOP, 7, 39, 132, 75
+CONTROL         "", IDC_EXPLORER, "{8856F961-340A-11D0-A96B-00C04FD705A2}", WS_TABSTOP, 167, 22, 320, 342
+RTEXT           "Static", IDC_STATIC_RESULTS, 120, 10, 42, 10, SS_CENTERIMAGE
+LTEXT           "Static", IDC_STATIC_STATUS, 169, 2, 247, 19
+PUSHBUTTON      "Ok", IDOK, 466, 2, 21, 17, BS_BITMAP
+RTEXT           "Static", IDC_DISTANCE, 60, 137, 100, 9, 0
+CONTROL         "Radio1", IDC_SEARCH_LOCATION, "Button", BS_AUTORADIOBUTTON | BS_BITMAP | BS_PUSHLIKE, 142, 39, 25, 17
+CONTROL         "Radio2", IDC_SEARCH_PROXIMITY, "Button", BS_AUTORADIOBUTTON | BS_BITMAP | BS_PUSHLIKE, 142, 59, 25, 17
+CONTROL         "Radio3", IDC_DISPLAY_FAVORITE, "Button", BS_AUTORADIOBUTTON | BS_BITMAP | BS_PUSHLIKE, 142, 79, 25, 17
+CONTROL         "List1", IDC_LIST_PROXIMITY, "SysListView32", LVS_REPORT | LVS_SINGLESEL | LVS_SHOWSELALWAYS | LVS_NOSORTHEADER | NOT WS_VISIBLE | WS_BORDER | WS_TABSTOP, 7, 39, 132, 75
+LTEXT           "Static", IDC_STATIC_PROXIMITY, 7, 2, 113, 8, NOT WS_VISIBLE
+CONTROL         "List1", IDC_LIST_FAVORITES, "SysListView32", LVS_REPORT | LVS_SINGLESEL | LVS_SHOWSELALWAYS | LVS_NOSORTHEADER | WS_BORDER | WS_TABSTOP, 7, 23, 132, 91
+END
+
+IDD_POI_MANAGER DIALOGEX 0, 0, 306, 246
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+EXSTYLE WS_EX_TOOLWINDOW
+CAPTION "Dialog"
+BEGIN
+DEFPUSHBUTTON   "OK", IDOK, 249, 7, 50, 14
+PUSHBUTTON      "Cancel", IDCANCEL, 249, 24, 50, 14
+LTEXT           "Static", IDC_STATIC_NOTE, 7, 7, 233, 33
+CONTROL         "Tree1", IDC_POI_TREE, "SysTreeView32", TVS_HASBUTTONS | TVS_HASLINES | TVS_LINESATROOT | TVS_CHECKBOXES | TVS_FULLROWSELECT | WS_BORDER | WS_TABSTOP, 7, 42, 233, 197
+CONTROL         161, IDC_IMAGE, "Static", SS_BITMAP | SS_REALSIZEIMAGE | NOT WS_VISIBLE, 7, 7, 17, 16
+COMBOBOX        IDC_COMBO_ZOOM, 248, 129, 51, 110, CBS_DROPDOWNLIST | WS_VSCROLL | WS_TABSTOP
+END
+
+IDD_DIALOG_CONFIG DIALOGEX 0, 0, 259, 372
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+EXSTYLE WS_EX_TOOLWINDOW
+CAPTION "Dialog"
+BEGIN
+DEFPUSHBUTTON   "OK", IDOK, 202, 351, 50, 14
+PUSHBUTTON      "Cancel", IDCANCEL, 7, 351, 50, 14
+GROUPBOX        "", IDC_STATIC_OPT_DISPLAY, 7, 7, 245, 60, 0, WS_EX_TRANSPARENT
+CONTROL         "", IDC_CHECK_DIST_MILES, "Button", BS_AUTOCHECKBOX | WS_TABSTOP, 13, 18, 192, 12, WS_EX_TRANSPARENT
+CONTROL         "", IDC_CHECK_DISPLAY_NUMBER, "Button", BS_AUTOCHECKBOX | WS_TABSTOP, 13, 32, 192, 12, WS_EX_TRANSPARENT
+LTEXT           "", IDC_STATIC_COORDS_FORMAT, 13, 46, 70, 12, SS_CENTERIMAGE, WS_EX_TRANSPARENT
+COMBOBOX        IDC_COMBO_COORDS_FORMAT, 128, 46, 117, 110, CBS_DROPDOWNLIST | WS_VSCROLL | WS_TABSTOP
+GROUPBOX        "", IDC_STATIC_OPT_ITN, 7, 70, 245, 134, 0, WS_EX_TRANSPARENT
+CONTROL         "", IDC_CHECK_AUTO_CALC, "Button", BS_AUTOCHECKBOX | WS_TABSTOP, 13, 81, 192, 12, WS_EX_TRANSPARENT
+CONTROL         "", IDC_CHECK_AUTO_ADD_STEP, "Button", BS_AUTOCHECKBOX | WS_TABSTOP, 13, 95, 192, 12, WS_EX_TRANSPARENT
+CONTROL         "", IDC_CHECK_FORCE_ROAD, "Button", BS_AUTOCHECKBOX | WS_TABSTOP, 13, 109, 192, 12, WS_EX_TRANSPARENT
+LTEXT           "", IDC_STATIC_ROUTE_PROVIDER, 13, 130, 70, 12, SS_CENTERIMAGE, WS_EX_TRANSPARENT
+COMBOBOX        IDC_COMBO_ROUTE_PROVIDER, 128, 130, 117, 110, CBS_DROPDOWNLIST | WS_VSCROLL | WS_TABSTOP
+LTEXT           "", IDC_STATIC_VEHICLE_TYPE, 13, 144, 70, 12, SS_CENTERIMAGE, WS_EX_TRANSPARENT
+COMBOBOX        IDC_COMBO_VEHICLE_TYPE, 128, 144, 117, 110, CBS_DROPDOWNLIST | WS_VSCROLL | WS_TABSTOP
+LTEXT           "", IDC_STATIC_ITINERARY_TYPE, 13, 158, 70, 12, SS_CENTERIMAGE, WS_EX_TRANSPARENT
+COMBOBOX        IDC_COMBO_ITINERARY_TYPE, 128, 158, 117, 110, CBS_DROPDOWNLIST | WS_VSCROLL | WS_TABSTOP
+CONTROL         "", IDC_CHECK_AVOID_HIGHWAY, "Button", BS_AUTOCHECKBOX | WS_TABSTOP, 13, 172, 192, 12, WS_EX_TRANSPARENT
+CONTROL         "", IDC_CHECK_AVOID_TOLLS, "Button", BS_AUTOCHECKBOX | WS_TABSTOP, 13, 186, 192, 12, WS_EX_TRANSPARENT
+GROUPBOX        "", IDC_STATIC_BACKGROUND, 7, 207, 245, 139, 0, WS_EX_TRANSPARENT
+CONTROL         "", IDC_TREE_MAPS, "SysTreeView32", TVS_HASBUTTONS | TVS_HASLINES | TVS_LINESATROOT | TVS_DISABLEDRAGDROP | TVS_SHOWSELALWAYS | TVS_CHECKBOXES | TVS_FULLROWSELECT | WS_BORDER | WS_HSCROLL | WS_TABSTOP, 13, 219, 207, 120
+PUSHBUTTON      "", IDC_BUTTON_SELECT_ALL, 226, 218, 25, 17, BS_BITMAP
+PUSHBUTTON      "", IDC_BUTTON_UNSELECT_ALL, 226, 238, 25, 17, BS_BITMAP
+END
+
+IDD_DIALOG_CSV DIALOGEX 0, 0, 186, 195
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+EXSTYLE WS_EX_TOOLWINDOW
+CAPTION "Dialog"
+BEGIN
+DEFPUSHBUTTON   "OK", IDOK, 7, 174, 50, 14
+PUSHBUTTON      "Cancel", IDCANCEL, 129, 174, 50, 14
+GROUPBOX        "Static", IDC_STATIC_TEMPLATE, 7, 9, 172, 102
+COMBOBOX        IDC_COMBO_TEMPLATE, 80, 7, 91, 160, CBS_DROPDOWNLIST | WS_VSCROLL | WS_TABSTOP
+LTEXT           "Static", IDC_STATIC_LATITUDE, 13, 24, 62, 12, SS_CENTERIMAGE, WS_EX_TRANSPARENT
+COMBOBOX        IDC_COMBO_LATITUDE, 80, 24, 91, 160, CBS_DROPDOWNLIST | WS_VSCROLL | WS_TABSTOP
+LTEXT           "Static", IDC_STATIC_LONGITUDE, 13, 41, 62, 12, SS_CENTERIMAGE
+COMBOBOX        IDC_COMBO_LONGITUDE, 80, 41, 91, 160, CBS_DROPDOWNLIST | WS_VSCROLL | WS_TABSTOP
+LTEXT           "Static", IDC_STATIC_ALTITUDE, 13, 58, 62, 12, SS_CENTERIMAGE, WS_EX_TRANSPARENT
+COMBOBOX        IDC_COMBO_ALTITUDE, 80, 58, 91, 160, CBS_DROPDOWNLIST | WS_VSCROLL | WS_TABSTOP
+LTEXT           "Static", IDC_STATIC_ADDRESS, 13, 75, 62, 12, SS_CENTERIMAGE, WS_EX_TRANSPARENT
+COMBOBOX        IDC_COMBO_ADDRESS, 80, 75, 91, 160, CBS_DROPDOWNLIST | WS_VSCROLL | WS_TABSTOP
+LTEXT           "Static", IDC_STATIC_SNIPPET, 13, 92, 62, 12, SS_CENTERIMAGE, WS_EX_TRANSPARENT
+COMBOBOX        IDC_COMBO_SNIPPET, 80, 92, 91, 160, CBS_DROPDOWNLIST | WS_VSCROLL | WS_TABSTOP
+GROUPBOX        "", IDC_STATIC, 7, 119, 172, 53
+CONTROL         "Check1", IDC_CHECK_LOCALE, "Button", BS_AUTOCHECKBOX | WS_TABSTOP, 13, 119, 157, 8
+LTEXT           "Static", IDC_STATIC_SDECIMAL, 14, 134, 117, 12, SS_CENTERIMAGE, WS_EX_TRANSPARENT
+EDITTEXT        IDC_EDIT_SDECIMAL, 134, 134, 37, 12, ES_AUTOHSCROLL
+LTEXT           "Static", IDC_STATIC_SLIST, 14, 151, 117, 12, SS_CENTERIMAGE, WS_EX_TRANSPARENT
+EDITTEXT        IDC_EDIT_SLIST, 134, 151, 37, 12, ES_AUTOHSCROLL
+END
+
+IDD_DIALOG_CHOOSE_ARRAY DIALOGEX 0, 0, 274, 218
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU | WS_THICKFRAME
+EXSTYLE WS_EX_TOOLWINDOW
+CAPTION "Dialog"
+BEGIN
+DEFPUSHBUTTON   "OK", IDOK, 217, 197, 50, 14
+PUSHBUTTON      "Cancel", IDCANCEL, 7, 197, 50, 14
+CONTROL         "Tree", IDC_TREE_CHOOSE_ARRAY, "SysTreeView32", TVS_HASBUTTONS | TVS_HASLINES | TVS_DISABLEDRAGDROP | TVS_LINESATROOT | TVS_FULLROWSELECT | WS_BORDER | WS_TABSTOP | TVS_DISABLEDRAGDROP | TVS_SHOWSELALWAYS, 7, 30, 260, 162
+LTEXT           "Static", IDC_STATIC, 7, 7, 259, 22, SS_LEFT, WS_EX_TRANSPARENT
+END
+
+IDD_PROGRESS_DLG DIALOGEX 0, 0, 300, 80 // With Cancel button
+//IDD_PROGRESS_DLG DIALOGEX 0, 0, 300, 59  // Without Cancel button
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION
+CAPTION "Dialog"
+BEGIN
+DEFPUSHBUTTON   "Cancel", IDCANCEL, 125, 59, 50, 14
+CONTROL         "Progress1", IDC_PROGRESS_BAR, "msctls_progress32", WS_BORDER, 7, 40, 286, 12
+CTEXT           "Static", IDC_PROGRESS_MESSAGE, 47, 7, 246, 33, WS_EX_TRANSPARENT
+ICON            IDR_MAINFRAME, IDC_PROGRESS_ICON, 7, 7, 48, 48, SS_REALSIZEIMAGE
+END
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// AXE_SRC
+//
+
+IDR_AXESRC              AXE_SRC                 "res\\source.axe"
+IDR_ESTSRC              AXE_SRC                 "res\\source.est"
+IDR_PTMSRC              AXE_SRC                 "res\\source.ptm"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Bitmap
+//
+
+IDB_ADD                 BITMAP                  "res\\add.bmp"
+IDB_REMOVE              BITMAP                  "res\\remove.bmp"
+IDB_UP                  BITMAP                  "res\\up.bmp"
+IDB_DOWN                BITMAP                  "res\\down.bmp"
+IDB_INVERT              BITMAP                  "res\\invert.bmp"
+IDB_ITI_CAR             BITMAP                  "res\\car.bmp"
+IDB_EARTH               BITMAP                  "res\\earth.bmp"
+IDB_COMPASS             BITMAP                  "res\\compass.bmp"
+IDB_SEARCH              BITMAP                  "res\\search.bmp"
+IDB_SEARCH_SEL          BITMAP                  "res\\search_sel.bmp"
+IDB_SEARCH_DISABLED     BITMAP                  "res\\search_grayed.bmp"
+IDB_CLEAR_CAR           BITMAP                  "res\\clearcar.bmp"
+IDB_REMOVEALL           BITMAP                  "res\\removeall.bmp"
+IDB_OPTIMISE            BITMAP                  "res\\optimise.bmp"
+IDB_POI                 BITMAP                  "res\\poi.bmp"
+IDB_LOCATION            BITMAP                  "res\\location.bmp"
+IDB_PROXIMITY           BITMAP                  "res\\proximity.bmp"
+IDB_ITI_RANDO           BITMAP                  "res\\rando.bmp"
+IDB_CONFIG              BITMAP                  "res\\config.bmp"
+IDB_FAVORITE            BITMAP                  "res\\favorite.bmp"
+IDB_NVG_FRESH           BITMAP                  "res\\nvg_fresh_16.bmp"
+IDB_MODIFY_POPUP        BITMAP                  "res\\modify_16.bmp"
+IDB_REMOVE_POPUP        BITMAP                  "res\\remove_16.bmp"
+IDB_OPEN_POPUP          BITMAP                  "res\\open_16.bmp"
+IDB_SAVE_POPUP          BITMAP                  "res\\save_16.bmp"
+IDB_GOOGLE_MAP          BITMAP                  "res\\google_maps_16.bmp"
+IDB_HERE_MAP            BITMAP                  "res\\here_maps_16.bmp"
+IDB_VIRTUAL_EARTH       BITMAP                  "res\\Windows_Live_16.bmp"
+IDB_TOMTOM_HOME         BITMAP                  "res\\tomtom_home_16.bmp"
+IDB_TOMTOM_MAP          BITMAP                  "res\\tomtom_16.bmp"
+IDB_PIONEER_NAVGATE     BITMAP                  "res\\navgate_16.bmp"
+IDB_MIOMORE_DESKTOP     BITMAP                  "res\\navman_16.bmp"
+IDB_GARMIN_COMMUNICATOR BITMAP                  "res\\communicator_16.bmp"
+IDB_CHOOSE_ICON         BITMAP                  "res\\choose_icon.bmp"
+IDB_PRINT               BITMAP                  "res\\printer.bmp"
+IDB_ITI_BIKE            BITMAP                  "res\\bike.bmp"
+IDB_ITI_TRUCK           BITMAP                  "res\\truck.bmp"
+IDB_ITI_MOTORBIKE       BITMAP                  "res\\motorbike.bmp"
+IDB_GOBACK              BITMAP                  "res\\validate.bmp"
+IDB_SELECT_ALL          BITMAP                  "res\\selectall.bmp"
+IDB_UNSELECT_ALL        BITMAP                  "res\\unselectall.bmp"
+IDB_MAPS_ICON           BITMAP                  "res\\maps_icons.bmp"
+IDB_ITI_LINES           BITMAP                  "res\\rando.bmp"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog Info
+//
+
+IDD_DIALOG_EDITOR DLGINIT
+BEGIN
+IDC_EXPLORER, 0x376, 160, 0
+0x0000, 0x0000, 0x004c, 0x0000, 0x319c, 0x0000, 0x2b34, 0x0000, 0x0000,
+0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000,
+0x0000, 0x0000, 0x004c, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0001,
+0x0000, 0xd0e0, 0x0057, 0x3573, 0x11cf, 0x69ae, 0x0008, 0x2e2b, 0x6212,
+0x0000, 0x0000, 0x0000, 0x0000, 0x004c, 0x0000, 0x1401, 0x0002, 0x0000,
+0x0000, 0x00c0, 0x0000, 0x0000, 0x4600, 0x0080, 0x0000, 0x0000, 0x0000,
+0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000,
+0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0001, 0x0000,
+0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000,
+0
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Cursor
+//
+
+IDC_MOVE                CURSOR                  "res\\hand.cur"
+/////////////////////////////////////////////////////////////////////////////
+
+
+/////////////////////////////////////////////////////////////////////////////
+// German (Germany) resources
+LANGUAGE LANG_GERMAN, SUBLANG_GERMAN
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE
+BEGIN
+IDS_ABOUTBOX            "Über " SOFT_NAME "..."
+IDS_LONGITUDE           "Längengrad"
+IDS_LATITUDE            "Breitengrad"
+IDS_ADDRESS             "Beschreibung"
+IDS_OPENFILTERS         "Alle Formate|%s|"
+IDS_ITNFILTERS          "TomTom Route (*.itn)|*.itn|"
+IDS_GPXFILTERS          "GPS eXchange 1.0 (*.gpx)|*.gpx|"
+IDS_ERROPEN             "Diese Datei kann nicht geöffnet werden."
+IDS_ERRSAVE             "Diese Datei kann nicht abgespeichert werden."
+IDS_ERRITN              "Diese Datei enthält keine Route."
+IDS_RTEFILTERS          "Garmin PCX5 (*.rte, *.wpt)|*.rte;*.wpt|"
+IDS_BT_EXPORT           "Exportieren"
+IDS_BT_OPEN             "Öffnen"
+IDS_BT_EXIT             "Abbrechen"
+IDS_AXEFILTERS          "Microsoft AutoRoute (*.axe)|*.axe|"
+IDS_CSVFILTERS          "CSV (*.csv)|*.csv|"
+IDS_KMLFILTERS          "Google Earth (*.kml)|*.kml|"
+IDS_TTMFILTERS          "TomTom Home||"
+IDS_LABEL_EXPORT        "Export-Format:"
+IDS_REMOVE_COMMA        "Entfernen sie die Kommas"
+IDS_CUT_ITN             "Teilen"
+IDS_EXT_AXE             "Exportieren"
+IDS_REMOVE_ACCENTS      "Entfernen Sie die Akzente"
+IDS_NONE                "Nein"
+IDS_CUT_ITN_TT3         "Tomtom 3"
+IDS_CUT_ITN_TT5         "Tomtom 5"
+IDS_CUT_ITN_CUSTOM      "Anleitung"
+IDS_OPTIONS             "Optionen"
+IDS_MN5FILTERS          "Navigon MN5 & Mio (*.rte)|*.rte|"
+IDS_DATFILTERS          "Destinator PN (*.dat)|*.DAT|"
+IDS_MN4FILTERS          "Navigon MN 4 & 5, MioMap 2 (*.rte)|*.rte|"
+IDS_FROM_TO             "Von %s bis %s"
+IDS_RDNFILTERS          "IGN Rando (*.rdn)|*.rdn|"
+IDS_BCRFILTERS          "Marco Polo, MTP & OnRoute (*.bcr)|*.bcr|"
+IDS_AXGFILTERS          "Microsoft AutoRoute GB (*.axg)|*.axg|"
+IDS_PTMFILTERS          "Microsoft MapPoint (*.ptm)|*.ptm|"
+IDS_ESTFILTERS          "Microsoft Streets & Trips (*.est)|*.est|"
+IDS_GDBFILTERS          "Garmin MapSource 6 (*.gdb)|*.gdb|"
+IDS_ALLFILTERS          "Alle Dateien (*.*)|*.*||"
+IDS_UP                  "Aufwärts"
+IDS_DOWN                "Abwärts"
+IDS_ADD                 "Hinzufügen"
+IDS_REMOVE              "Löschen"
+IDS_MODIFY              "Ändern"
+IDS_ERR_LATITUDE        "Der Längengrad muss zwischen %d und %d liegen."
+IDS_ERR_LONGITUDE       "Der Breitengrad muss zwischen %d und %d liegen."
+IDS_WAYPOINTS_NB        "Etappen: %d  "
+IDS_OZIFILTERS          "OziExplorer Route (*.rte)|*.rte|"
+IDS_RT2FILTERS          "OziExplorer CE Route (*.rt2)|*.rt2|"
+IDS_INVERT              "Umkehren"
+IDS_MAGFILTERS          "Magellan SD (*.rte, *.upt)|*.rte;*.upt|"
+IDS_EXPLORIST           "eXplorist"
+IDS_TEMPLATE            "Beispiel"
+IDS_AXTFILTERS          "Beispiele AutoRoute (*.axt)|*.axt|"
+IDS_PTTFILTERS          "Beispiele MapPoint (*.ptt)|*.ptt|"
+IDS_STTFILTERS          "Beispiele Streets & Trips (*.stt)|*.stt|"
+IDS_TRLFILTERS          "Polstar PolNav (*.trl)|*.trl|"
+IDS_URLFILTERS          "Google Maps Link (*.url)|*.url|"
+IDS_NAME                "Name:"
+IDS_FILENAME            "Datei: %s"
+IDS_ROUTE               "Routes"
+IDS_UNKNOWN             "Unbekannt"
+IDS_BADFORMAT           "Dateiformat unbekannt."
+IDS_MN6FILTERS          "Navigon MN 6 (*.rte)|*.rte|"
+IDS_GOOGLE_MAP_VIEW     "Ansicht in Google Maps"
+IDS_VIRTUAL_EARTH_VIEW  "Ansicht in Bing Maps"
+IDS_MSN_VE_LINK         "http://local.live.com/default.aspx?cp=%f~%f&style=r&lvl=10&v=2&sp=an.%f_%f_%05d_%s"
+IDS_GOOGLE_MAPS_LINK    BASE_URL "ggl_maps.html?id=%d&lat=%f&lng=%f&name=%s&cmt=%s"
+IDS_EDITOR              "Tourenplaner"
+IDS_GOOGLE_LANG         "de"
+IDS_SEARCH              "Suchen"
+IDS_SEARCH_RESULTS      "Suchergebnisse"
+IDS_RESULTS             "%d Ergebnisse"
+IDS_ITINERARY           "Reiseweg"
+IDS_SEARCHING           "Suche läuft..."
+IDS_TOOLTIP_CALCULATE   "Route berechnen"
+IDS_TOOLTIP_VIEWALL     "Gesamtroute anschauen"
+IDS_NETWORK_ERR         "Unser Programm hat kann keinen Internet-Zugang finden. Überprüfen Sie Ihre Internet-Verbindung und versuchen Sie es erneut.\n Error 0x%08X (%s)"
+IDS_DOWNLOADING         "Herunterladen..."
+IDS_PROVIDER_WAZE_USA   "Waze USA"
+IDS_PROVIDER_WAZE_WORLD "Waze World"
+IDS_GEO_SERVER_ERROR    "Aus unbekannten Gründen kann die Anfrage nicht bearbeitet werden."
+IDS_GEO_MISSING_ADDRESS "Im Suchfeld ist kein Wert eingegeben."
+IDS_GEO_UNKNOWN_ADDRESS "Es wurde kein Ort für « %s » gefunden. Eventuell Fehler in der Adresse oder Adresse noch nicht erfasst."
+IDS_UNAVAILABLE_ADDRESS "Das Suchergebnis « %s » konnte aus gesetzlichen oder vertragsrechtlichen Gründen nicht angezeigt werden."
+IDS_NEW_VERSION         "Eine neue Version des " SOFT_NAME " (%s) ist verfügbar."
+IDS_TOOLTIP_CLEARROUTE  "Route löschen"
+IDS_ADVICE              "Klicken Sie auf die Karte um einen Punkt hinzuzufügen. Verschieben mit Drag & Drop möglich."
+IDS_ROUTING_PROGRESS    "Routenberechnung von %s bis %s..."
+IDS_ROUTING_ERROR       "Routenberechnung von %s bis %s nicht möglich. Überprüfen Sie die Positionen und versuchen Sie es erneut."
+IDS_ROUTING_SUCESS      "Die schnellste Route von %s bis %s wurde mit Erfolg berechnet."
+IDS_TOOLTIP_REMOVEALL   "Alle löschen"
+IDS_CONFIRM_REMOVE      "Möchten Sie wirklich alle Zwischenziele dieser Route löschen ?"
+IDS_EMPTY               " "
+IDS_TOOLTIP_OPTIMISE    "Streckenoptimierung"
+IDS_POI                 "POI"
+IDS_SUMMARY             "Entfernung: "
+IDS_ZOOM_LEVELS         "5 (Land),6,7 (Gebiet),8,9,10,11 (Grossstadt),12 (grosse Stadt),13,14,15 (Stadtviertel ),16 (Strasse)"
+IDS_GPGFILTERS          "Garmin Nüvi, GPX MapSource (*.gpx)|*.gpx|"
+IDS_LOCFILTERS          "XML Location (*.loc)|*.loc|"
+IDS_LOCALE_SETTINGS     "Regionale Daten verwenden"
+IDS_GGMFILTERS          "Google Maps||"
+IDS_PRINT_VERSION       "Druckversion"
+IDS_CONFIRM_CLOSE       "Die Änderungen gehen verloren, möchten Sie trotzdem fortfahren ?"
+IDS_SEARCH_NEAR_FROM    "Suche in der Nähe von:"
+IDS_SEARCH_LOCATION     "Einen Ort suchen"
+IDS_SEARCH_PROXIMITY    "In der Nähe suchen"
+IDS_NO_PROXIMITY        "Markieren Sie einen Punkt"
+IDS_CFG_AUTO_CALC       "Route automatisch neu berechnet"
+IDS_CFG_ROUTE_PROVIDER  "Anfahrt Dienstleister"
+IDS_CFG_SETTINGS        "Konfiguration"
+IDS_CFG_DIST_MILES      "Entfernung in Meilen anzeigen"
+IDS_CFG_BACK_MAP        "Karte"
+IDS_CFG_BACK_SAT        "Satellit"
+IDS_XVMFILTERS          "ViaMichelin (*.xvm)|*.xvm|"
+IDS_FAVORITES           "Favoriten"
+IDS_MPSFILTERS          "Garmin MapSource 5 (*.mps)|*.mps|"
+IDS_TRPFILTERS          "CoPilot 6 & 7 (*.trp)|*.trp|"
+IDS_SHAREVIOLATION      "Unmöglich diese Datei zu öffnen, da sie schon von einer anderen Anwendung genutzt wird."
+IDS_TOOLTIP_VALIDATE    "Modifikationen bestätigen"
+IDS_ADD_TO_TOMTOM       "Zum TomTom hinzufügen"
+IDS_BCKFILTERS          "Becker Traffic Assist (*.rte)|*.rte|"
+IDS_ROUTEFILTERS        "Navigon MN 7, iPhone (*.route, *.store, *.targets)|*.route;*.store;*.targets|"
+IDS_LMXFILTERS          "Nokia Landmark Exchange (*.lmx)|*.lmx|"
+IDS_ALTITUDE            "Elevation"
+IDS_SNIPPET             "Kommentar"
+IDS_DEFAULT             "Vorgabe"
+IDS_INFORAD             "Inforad"
+IDS_COLUMN              "Spalte %02d"
+IDS_LOCALE_SDECIMAL     "Dezimaltrennzeichen"
+IDS_LOCALE_SLIST        "Spaltetrennzeichen"
+IDS_CFG_AVOID_HIGHWAY   "Autobahnen vermeiden"
+IDS_CFG_AVOID_TOLLS     "Mautstraßen vermeiden"
+IDS_CFG_STRAIGHT_LINES  "Gerade Linien"
+IDS_BING_LANG           "de-DE"
+IDS_CFG_OPT_ITN         "Rooute optionen"
+IDS_CFG_BACKGROUND      "Karte optionen"
+IDS_SEND_TO_NVGFRESH    "Zum Navigon hinzufügen"
+IDS_IMPORT_FAV          "Favoriten importieren"
+IDS_EXPORT_FAV          "Favoriten exportieren"
+IDS_TOMTOM_MAP_VIEW     "Ansicht in TomTom Routes"
+IDS_TOMTOM_MAPS_LINK    "http://www.routes.tomtom.com/map/%s/?center=%s&zoom=10&ui=8"
+IDS_APPEND_ROUTE        "Fügen Sie die aktuelle Route"
+IDS_NVGFILTERS          "Navigon Fresh (*.freshroute)|*.freshroute|"
+IDS_SEND_TO_NAVGATE     "Zum Pioneer Navgate hinzufügen"
+IDS_PIONEER             "Pioneer Navgate"
+IDS_SEND_TO_MIOMORE     "Zum Mio/Navman hinzufügen"
+IDS_NVMFILTERS          "Navman S-Series (*.xml)|*.xml|"
+IDS_ITFFILTERS          "Sygic McGuider (*.itf)|*.itf|"
+IDS_DESTINATOR          "Destinator"
+IDS_SEND_TO_GARMIN      "Zum Garmin hinzufügen"
+IDS_TRBFILTERS          "Tripy (*.trb)|*.trb|"
+IDS_EXPORT_ITINERARY    "Export Route"
+IDS_START_EXPORT        "Vorbereitung für den Export..."
+IDS_SAVE_EXPORT         "Reiseroute speichern in Datei %s"
+IDS_TOOLTIP_FORCE_ROAD  "Wegepunkte auf den Straßen lokalisieren"
+IDS_GPLFILTERS          "Medion GoPal (*.xml)|*.xml|"
+IDS_FLKFILTERS          "Falk Navigator (*.tour)|*.tour|"
+IDS_KRTFILTERS          "klickTel Routenplaner (*.krt)|*.krt|"
+IDS_TKFILTERS           "Kompass (*.tk)|*.tk|"
+IDS_CP8FILTERS          "CoPilot 8 & 9 (*.trp)|*.trp|"
+IDS_TRACK               "Tracks"
+IDS_WAYPOINTS           "Waypoints"
+IDS_NOTITLE             "Ohne Titel"
+IDS_ARRAYDESC           "%s (%d Punkte)"
+IDS_CHOOSE_LABEL        "Die Datei enthält mehrere Listen von Punkten. Bitte wählen Sie ein, die als eine Route verwendet werden."
+IDS_CHOOSE_TITLE        "Wählen Sie eine Route"
+IDS_TRIPY_ERROR         "Ein Kommunikationsfehler mit dem Server wurde Tripy aufgetreten."
+IDS_TOOMANYPOINTS       "Die aktuelle Route enthält eine Menge von Punkten. Öffnen Sie den Editor mit zu viele Punkte kann zu einer Abnahme der Leistung und eine sehr langsame Anzeige.\nMöchten Sie trotzdem fortfahren ?"
+IDS_PLEASEWAIT          "Bitte warten..."
+IDS_TXTFILTERS          "GoClever, Mireo viaGPS 3.0 (*.txt)|*.txt|"
+IDS_CFG_AUTO_ADD_STEP   "Wegpunkt direkt einfügen, wenn Sie auf Route klicken"
+IDS_CFG_BACK_TOPO       "Gelände"
+IDS_TOOLTIP_PRINT       "Drucken"
+IDS_PROVIDER_GOOGLE_MAP "Google Maps"
+IDS_PROVIDER_BING_API   "Microsoft Bing Maps"
+IDS_PROVIDER_VIAMICHLIN "ViaMichelin"
+IDS_ITINERARY_TYPE      "Routenarten"
+IDS_ITINERARY_DEFAULT   "Empfohlen"
+IDS_ITINERARY_QUICKEST    "Schnellste"
+IDS_ITINERARY_SHORTEST    "Kürzeste"
+IDS_ITINERARY_SIGHTSEEING "Sehenswert"
+IDS_ITINERARY_ECONOMICAL  "Wirtschaftlich"
+IDS_VEHICLE_FOOT        "Zu Fuß"
+IDS_VEHICLE_BIKE        "Fahrrad"
+IDS_VEHICLE_TRUCK       "Lastkraftwagen"
+IDS_VIAMICHELIN_LANG    "deu"
+IDS_PROVIDER_OSM        "OpenStreetMap"
+IDS_UPOIFILTERS         "iGo 8 POI (*.upoi)|*.upoi|"
+IDS_UPOI80FILTERS       "iGo 8.0 POI (*.upoi)|*.upoi|"
+IDS_UPOI83FILTERS       "iGo 8.3 POI (*.upoi)|*.upoi|"
+IDS_CONFIRM_READ_URL    "Ein Hyperlink erkannt wurde. Wollen Sie interpretieren diesen Link?"
+IDS_PROVIDER_TRIPY_RTWEB"Tripy RoadTracer Web"
+IDS_OV2FILTERS          "TomTom POI (*.ov2)|*.ov2|"
+IDS_ITF11FILTERS        "Sygic GPS Navigation 11 & 12 (*.itf)|*.itf|"
+IDS_RTFILTERS           "GoRider, Mireo viaGPS 4.5 (*.rt)|*.rt|"
+IDS_PLTFILTERS          "OziExplorer Track (*.plt)|*.plt|"
+IDS_COUNTRY_ISOALPHA3   "DEU"
+IDS_NDRIVEFILTERS       "NDrive, Mappy GPS (*.kml)|*.kml|"
+IDS_TOOLTIP_UP          "Aufwärts"
+IDS_TOOLTIP_DOWN        "Abwärts"
+IDS_TOOLTIP_ADD         "Hinzufügen"
+IDS_TOOLTIP_REMOVE      "Löschen"
+IDS_TOOLTIP_INVERT      "Umkehren"
+IDS_TOOLTIP_EDITOR      "Öffnen Tourenplaner"
+IDS_TOOLTIP_BT_EXPORT   "Exportieren"
+IDS_TOOLTIP_BT_EXIT     "Abbrechen"
+IDS_TOOLTIP_BT_OPEN     "Öffnen"
+IDS_TOOLTIP_CFG_SETTINGS"Konfiguration"
+IDS_TOOLTIP_SEARCH      "Suchen"
+IDS_DECIMAL_DEGREES     "Decimal degrees"
+IDS_DEGREES_MINUTES     "Degrees/Minutes"
+IDS_DEGREES_MINUTES_SECONDS "Degrees/Minutes/Seconds"
+IDS_COORD_FORMAT        "Koordinaten"
+IDS_MPFCTRFILTERS       "MapFactor GPS Navigation (*.xml)|*.xml|"
+IDS_CFG_OPT_DISPLAY     "Anzeigeoptionen"
+IDS_CFG_DISPLAY_NUMBER  "Anzeige Punkten Zahlen"
+IDS_CFG_BACK_HYBRID     "Hybrid"
+IDS_TOOLTIP_SELECT_ALL  "Alles selektieren"
+IDS_TOOLTIP_UNSELECT_ALL"Alles deselektieren"
+IDS_WPTFILTERS          "OziExplorer Waypoints (*.wpt)|*.wpt|"
+IDS_OSMFILTERS          "OpenStreetMap XML (*.osm)|*.osm|"
+IDS_PROVIDER_HERE_API   "HERE"
+IDS_ITF13FILTERS        "Sygic GPS Navigation 13, 14, 15, 16 & 17 (*.itf)|*.itf|"
+IDS_PROVIDER_TOMTOM     "TomTom Maps"
+IDS_HERE_MAPS_VIEW      "Ansicht in HERE"
+IDS_HERE_MAPS_LINK      "http://here.com/map=%f,%f,16/title=%s"
+IDS_HEREFILTERS         "HERE Maps||"
+IDS_ITINERARY_THRILLING "Spannend"
+IDS_VEHICLE_TYPE        "Fahrzeug"
+IDS_VEHICLE_CAR			"Automobil"
+IDS_VEHICLE_MOTORBIKE   "Motorrad"
+IDS_WEB_EDITOR_LANG     "de"
+IDS_CFG_TRUCK_HEIGHT    "Höhe"
+IDS_CFG_TRUCK_WIDTH     "Breite"
+IDS_CFG_TRUCK_LENGTH    "Länge"
+IDS_CFG_TRUCK_TRAILERS  "Anzahl der Anhänger"
+IDS_CFG_TRUCK_LIMITED_WEIGHT "Gewicht"
+IDS_CFG_TRUCK_WEIGHT_AXLE    "Gewicht pro Achse"
+IDS_CFG_TRUCK_CATEGORY       "Kategorie"
+IDS_TRUCK_NO_CATEGORY           "No category"
+IDS_TRUCK_PUBLIC_TRANSPORT      "Öffentlicher Verkehr"
+IDS_TRUCK_COMMON_GOODS          "Gemeinwohl"
+IDS_TRUCK_HAZARDOUS_EXPLOSIVE   "Sprengstoff"
+IDS_TRUCK_HAZARDOUS_GAS         "Gas"
+IDS_TRUCK_HAZARDOUS_FLAMMABLE   "Brennbares material"
+IDS_TRUCK_HAZARDOUS_COMBUSTIBLE "Combustible material"
+IDS_TRUCK_HAZARDOUS_ORGANIC     "Organisches material"
+IDS_TRUCK_HAZARDOUS_POISON      "Gift"
+IDS_TRUCK_HAZARDOUS_RADIOACTIVE "Radioaktives material"
+IDS_TRUCK_HAZARDOUS_CORROSIVE   "Ätzende material"
+IDS_TRUCK_HAZARDOUS_POISONOUS   "Giftig beim Einatmen"
+IDS_TRUCK_HAZARDOUS_HARMFUL     "Gefährlich für die aquatische Umwelt"
+IDS_TRUCK_HAZARDOUS_OTHER       "Other types of hazardous materials"
+IDS_TRUCK_HAZARDOUS_ALL         "All types of hazardous materials"
+IDS_ERR_TRUCK_HEIGHT            "Truck height value must lie between %d and %d meters."
+IDS_ERR_TRUCK_WIDTH             "Truck width value must lie between %d and %d meters."
+IDS_ERR_TRUCK_LENGTH            "Truck length value must lie between %d and %d meters."
+IDS_ERR_TRUCK_LIMITED_WEIGHT    "Truck weight value must lie between %d and %d tons."
+IDS_ERR_TRUCK_WEIGHT_AXLE       "Truck weight per axle value must lie between %d and %d tons."
+IDS_VEHICLE_CAMPERVAN           "Wohnmobil"
+IDS_VEHICLE_BUS                 "Bus"
+IDS_VMMFILTERS                  "ViaMichelin Routenplaner||"
+IDS_TTDFILTERS                  "Tomtom MyDrive||"
+IDS_CUT_ITN_RIDER               "Tomtom Rider"
+IDS_GPXDAIMLER50FILTERS         "Daimler NTG 5.0 GPX (*.gpx)|*.gpx|"
+IDS_GPXDAIMLER55FILTERS         "Daimler NTG 5.5 GPX (*.gpx)|*.gpx|"
+IDS_GPXDAIMLERUBXFILTERS        "Daimler NTG MBUX GPX (*.gpx)|*.gpx|"
+IDS_XMLFILTERS                  "Smart Tomtom MyRoutes (*.xml)|*.xml|"
+IDS_CP10FILTERS				    "CoPilot 10 (*.trp)|*.trp|"
+IDS_PROVIDER_GEOPORTAL_API      "IGN GeoPortal"
+IDS_GBCFILTERS                  "Garmin Zumo, GPX BaseCamp (*.gpx)|*.gpx|"
+IDS_CLEAR_FAV                   "Favoriten löschen"
+IDS_CONFIRM_CLEAR_FAV           "Möchten Sie alle Favoriten entfernen?"
+IDS_URLSYGICFILTERS             "Sygic URL (*.html)|*.html|"
+END
+/////////////////////////////////////////////////////////////////////////////
+
+/////////////////////////////////////////////////////////////////////////////
+// English (U.S.) resources
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE
+BEGIN
+IDS_ABOUTBOX            "&About " SOFT_NAME "..."
+IDS_LONGITUDE           "Longitude"
+IDS_LATITUDE            "Latitude"
+IDS_ADDRESS             "Name"
+IDS_OPENFILTERS         "All formats|%s|"
+IDS_ITNFILTERS          "TomTom Itinerary (*.itn)|*.itn|"
+IDS_GPXFILTERS          "GPS eXchange 1.0 (*.gpx)|*.gpx|"
+IDS_ERROPEN             "The file cannot be read."
+IDS_ERRSAVE             "The file cannot be write."
+IDS_ERRITN              "The file does not contain any itinerary."
+IDS_RTEFILTERS          "Garmin PCX5 (*.rte, *.wpt)|*.rte;*.wpt|"
+IDS_BT_EXPORT           "&Export"
+IDS_BT_OPEN             "&Open"
+IDS_BT_EXIT             "E&xit"
+IDS_AXEFILTERS          "Microsoft AutoRoute (*.axe)|*.axe|"
+IDS_CSVFILTERS          "CSV (*.csv)|*.csv|"
+IDS_KMLFILTERS          "Google Earth (*.kml)|*.kml|"
+IDS_TTMFILTERS          "TomTom Home||"
+IDS_LABEL_EXPORT        "Export file format:"
+IDS_REMOVE_COMMA        "Remove commas"
+IDS_CUT_ITN             "Split"
+IDS_EXT_AXE             "Extended convertion"
+IDS_REMOVE_ACCENTS      "Remove accents"
+IDS_NONE                "No"
+IDS_CUT_ITN_TT3         "TomTom 3"
+IDS_CUT_ITN_TT5         "TomTom 5"
+IDS_CUT_ITN_CUSTOM      "Manual"
+IDS_OPTIONS             "Options"
+IDS_MN5FILTERS          "Navigon MN5 & Mio (*.rte)|*.rte|"
+IDS_DATFILTERS          "Destinator PN (*.dat)|*.DAT|"
+IDS_MN4FILTERS          "Navigon MN 4 & 5, MioMap 2 (*.rte)|*.rte|"
+IDS_FROM_TO             "From %s to %s"
+IDS_RDNFILTERS          "IGN Rando (*.rdn)|*.rdn|"
+IDS_BCRFILTERS          "Marco Polo, MTP & OnRoute (*.bcr)|*.bcr|"
+IDS_AXGFILTERS          "Microsoft AutoRoute GB (*.axg)|*.axg|"
+IDS_PTMFILTERS          "Microsoft MapPoint (*.ptm)|*.ptm|"
+IDS_ESTFILTERS          "Microsoft Streets & Trips (*.est)|*.est|"
+IDS_GDBFILTERS          "Garmin MapSource 6 (*.gdb)|*.gdb|"
+IDS_ALLFILTERS          "All files (*.*)|*.*||"
+IDS_UP                  "Up"
+IDS_DOWN                "Down"
+IDS_ADD                 "Insert"
+IDS_REMOVE              "Remove"
+IDS_MODIFY              "Modify"
+IDS_ERR_LATITUDE        "Latitude value must lie between %d and %d."
+IDS_ERR_LONGITUDE       "Longitude value must lie between %d and %d."
+IDS_WAYPOINTS_NB        "Waypoints: %d  "
+IDS_OZIFILTERS          "OziExplorer Route (*.rte)|*.rte|"
+IDS_RT2FILTERS          "OziExplorer CE Route (*.rt2)|*.rt2|"
+IDS_INVERT              "Reverse"
+IDS_MAGFILTERS          "Magellan SD (*.rte, *.upt)|*.rte;*.upt|"
+IDS_EXPLORIST           "eXplorist"
+IDS_TEMPLATE            "Template"
+IDS_AXTFILTERS          "AutoRoute Templates (*.axt)|*.axt|"
+IDS_PTTFILTERS          "MapPoint Templates (*.ptt)|*.ptt|"
+IDS_STTFILTERS          "Streets & Trips Templates (*.stt)|*.stt|"
+IDS_TRLFILTERS          "Polstar PolNav (*.trl)|*.trl|"
+IDS_URLFILTERS          "Google Maps Link (*.url)|*.url|"
+IDS_NAME                "Name:"
+IDS_FILENAME            "File: %s"
+IDS_ROUTE               "Routes"
+IDS_UNKNOWN             "Unknown"
+IDS_BADFORMAT           "Unknown file format."
+IDS_MN6FILTERS          "Navigon MN 6 (*.rte)|*.rte|"
+IDS_GOOGLE_MAP_VIEW     "Show in Google Maps"
+IDS_VIRTUAL_EARTH_VIEW  "Show in Bing Maps"
+IDS_MSN_VE_LINK         "http://local.live.com/default.aspx?cp=%f~%f&style=r&lvl=10&v=2&sp=an.%f_%f_%05d_%s"
+IDS_GOOGLE_MAPS_LINK    BASE_URL "ggl_maps.html?id=%d&lat=%f&lng=%f&name=%s&cmt=%s"
+IDS_EDITOR              "Editor"
+IDS_GOOGLE_LANG         "en"
+IDS_SEARCH              "Search"
+IDS_SEARCH_RESULTS      "Search results"
+IDS_RESULTS             "%d results"
+IDS_ITINERARY           "Itinerary"
+IDS_SEARCHING           "Searching..."
+IDS_TOOLTIP_CALCULATE   "Get directions"
+IDS_TOOLTIP_VIEWALL     "Show entire itinerary"
+IDS_NETWORK_ERR         SOFT_NAME " detected a network error. Please check your network connection an try again.\n Error 0x%08X (%s)"
+IDS_DOWNLOADING         "Downloading..."
+IDS_PROVIDER_WAZE_USA   "Waze USA"
+IDS_PROVIDER_WAZE_WORLD "Waze World"
+IDS_GEO_SERVER_ERROR    "A geocoding request could not be successfully processed, yet the exact reason for the failure is not known."
+IDS_GEO_MISSING_ADDRESS "The search field had no value."
+IDS_GEO_UNKNOWN_ADDRESS "No corresponding geographic location could be found for '%s'. This may be due to the fact that the address is relatively new, or it may be incorrect."
+IDS_UNAVAILABLE_ADDRESS "The geographic location for '%s' cannot be returned due to legal or contractual reasons."
+IDS_NEW_VERSION         "A new version of " SOFT_NAME " (%s) is available on %s."
+IDS_TOOLTIP_CLEARROUTE  "Clear directions"
+IDS_ADVICE              "Click on the map to add a waypoint. Drag and Drop a point to move it."
+IDS_ROUTING_PROGRESS    "Get directions from %s to %s..."
+IDS_ROUTING_ERROR       "Unable to get directions from %s to %s. Please check waypoints locations and try again."
+IDS_ROUTING_SUCESS      "Fastest directions from %s to %s was successfully retrieved."
+IDS_TOOLTIP_REMOVEALL   "Remove all"
+IDS_CONFIRM_REMOVE      "Do you want to really remove all the waypoints ?"
+IDS_EMPTY               " "
+IDS_TOOLTIP_OPTIMISE    "Optimise itinerary"
+IDS_POI                 "Points of Interest"
+IDS_SUMMARY             "Distance: "
+IDS_ZOOM_LEVELS         "5 (Country),6,7 (Area),8,9,10,11 (Very large city),12 (Large city),13,14,15 (District),16 (Street)"
+IDS_GPGFILTERS          "Garmin Nüvi, GPX MapSource (*.gpx)|*.gpx|"
+IDS_LOCFILTERS          "XML Location (*.loc)|*.loc|"
+IDS_LOCALE_SETTINGS     "Use locale settings"
+IDS_GGMFILTERS          "Google Maps||"
+IDS_PRINT_VERSION       "Printable version"
+IDS_CONFIRM_CLOSE       "Changes will be lost. Continue anyway?"
+IDS_SEARCH_NEAR_FROM    "Search near:"
+IDS_SEARCH_LOCATION     "Location search"
+IDS_SEARCH_PROXIMITY    "Proximity search"
+IDS_NO_PROXIMITY        "Please select a waypoint"
+IDS_CFG_AUTO_CALC       "Automatically recalculate the itinerary"
+IDS_CFG_ROUTE_PROVIDER  "Directions provider"
+IDS_CFG_SETTINGS        "Settings"
+IDS_CFG_DIST_MILES      "Display the distance in miles"
+IDS_CFG_BACK_MAP        "Road map"
+IDS_CFG_BACK_SAT        "Satellite view"
+IDS_XVMFILTERS          "ViaMichelin (*.xvm)|*.xvm|"
+IDS_FAVORITES           "Favorites"
+IDS_MPSFILTERS          "Garmin MapSource 5 (*.mps)|*.mps|"
+IDS_TRPFILTERS          "CoPilot 6 & 7 (*.trp)|*.trp|"
+IDS_SHAREVIOLATION      "Unable to read the file because it is already opened by another application."
+IDS_TOOLTIP_VALIDATE    "Validate changes"
+IDS_ADD_TO_TOMTOM       "Add to TomTom"
+IDS_BCKFILTERS          "Becker Traffic Assist (*.rte)|*.rte|"
+IDS_ROUTEFILTERS        "Navigon MN 7, iPhone (*.route, *.store, *.targets)|*.route;*.store;*.targets|"
+IDS_LMXFILTERS          "Nokia Landmark Exchange (*.lmx)|*.lmx|"
+IDS_ALTITUDE            "Elevation"
+IDS_SNIPPET             "Comment"
+IDS_DEFAULT             "Default"
+IDS_INFORAD             "Inforad"
+IDS_COLUMN              "Column %02d"
+IDS_LOCALE_SDECIMAL     "Decimal separator"
+IDS_LOCALE_SLIST        "Column separator"
+IDS_CFG_AVOID_HIGHWAY   "Avoid highways"
+IDS_CFG_AVOID_TOLLS     "Avoid tolls"
+IDS_CFG_STRAIGHT_LINES  "Straight lines"
+IDS_BING_LANG           "en-US"
+IDS_CFG_OPT_ITN         "Itinerary options"
+IDS_CFG_BACKGROUND      "Maps options"
+IDS_SEND_TO_NVGFRESH    "Add to Navigon"
+IDS_IMPORT_FAV          "Import favorites"
+IDS_EXPORT_FAV          "Export favorites"
+IDS_TOMTOM_MAP_VIEW     "Show in TomTom Routes"
+IDS_TOMTOM_MAPS_LINK    "http://www.routes.tomtom.com/map/%s/?center=%s&zoom=10&ui=8"
+IDS_APPEND_ROUTE        "Append to current itinerary"
+IDS_NVGFILTERS          "Navigon Fresh (*.freshroute)|*.freshroute|"
+IDS_SEND_TO_NAVGATE     "Add to Pioneer Navgate"
+IDS_PIONEER             "Pioneer Navgate"
+IDS_SEND_TO_MIOMORE     "Add to Mio/Navman"
+IDS_NVMFILTERS          "Navman S-Series (*.xml)|*.xml|"
+IDS_ITFFILTERS          "Sygic McGuider (*.itf)|*.itf|"
+IDS_DESTINATOR          "Destinator"
+IDS_SEND_TO_GARMIN      "Add to Garmin"
+IDS_TRBFILTERS          "Tripy (*.trb)|*.trb|"
+IDS_EXPORT_ITINERARY    "Export itinerary"
+IDS_START_EXPORT        "Preparing to export..."
+IDS_SAVE_EXPORT         "Write itinerary in file %s"
+IDS_TOOLTIP_FORCE_ROAD  "Place waypoints on roads"
+IDS_GPLFILTERS          "Medion GoPal (*.xml)|*.xml|"
+IDS_FLKFILTERS          "Falk Navigator (*.tour)|*.tour|"
+IDS_KRTFILTERS          "klickTel Routenplaner (*.krt)|*.krt|"
+IDS_TKFILTERS           "Kompass (*.tk)|*.tk|"
+IDS_CP8FILTERS          "CoPilot 8 & 9 (*.trp)|*.trp|"
+IDS_TRACK               "Tracks"
+IDS_WAYPOINTS           "Waypoints"
+IDS_NOTITLE             "Untitled"
+IDS_ARRAYDESC           "%s (%d points)"
+IDS_CHOOSE_LABEL        "The file contains several lists of points. Please select one that will be used as an itinerary."
+IDS_CHOOSE_TITLE        "Choose an itinerary"
+IDS_TRIPY_ERROR         "A communication error with the Tripy server was occurred."
+IDS_TOOMANYPOINTS       "The current itinerary contains a lot of points. Opening the editor with too many points can cause a decrease in performance and a very slow display.\nContinue anyway?"
+IDS_PLEASEWAIT          "Please wait..."
+IDS_TXTFILTERS          "GoClever, Mireo viaGPS 3.0 (*.txt)|*.txt|"
+IDS_CFG_AUTO_ADD_STEP   "Directly add a stage when clicking on route"
+IDS_CFG_BACK_TOPO       "Terrain"
+IDS_TOOLTIP_PRINT       "Print"
+IDS_PROVIDER_GOOGLE_MAP "Google Maps"
+IDS_PROVIDER_BING_API   "Microsoft Bing Maps"
+IDS_PROVIDER_VIAMICHLIN "ViaMichelin"
+IDS_ITINERARY_TYPE      "Driving directions"
+IDS_ITINERARY_DEFAULT   "Recommended"
+IDS_ITINERARY_QUICKEST     "Quickest"
+IDS_ITINERARY_SHORTEST     "Shortest"
+IDS_ITINERARY_SIGHTSEEING  "Sightseeing"
+IDS_ITINERARY_ECONOMICAL   "Economical"
+IDS_VEHICLE_FOOT        "On foot"
+IDS_VEHICLE_BIKE        "Cycle"
+IDS_VEHICLE_TRUCK       "Truck"
+IDS_VIAMICHELIN_LANG    "eng"
+IDS_PROVIDER_OSM        "OpenStreetMap"
+IDS_UPOIFILTERS         "iGo 8 POI (*.upoi)|*.upoi|"
+IDS_UPOI80FILTERS       "iGo 8.0 POI (*.upoi)|*.upoi|"
+IDS_UPOI83FILTERS       "iGo 8.3 POI (*.upoi)|*.upoi|"
+IDS_CONFIRM_READ_URL    "A hyperlink was detected. Do you want to interpret this link?"
+IDS_PROVIDER_TRIPY_RTWEB"Tripy RoadTracer Web"
+IDS_OV2FILTERS          "TomTom POI (*.ov2)|*.ov2|"
+IDS_ITF11FILTERS        "Sygic GPS Navigation 11 & 12 (*.itf)|*.itf|"
+IDS_RTFILTERS           "GoRider, Mireo viaGPS 4.5 (*.rt)|*.rt|"
+IDS_PLTFILTERS          "OziExplorer Track (*.plt)|*.plt|"
+IDS_COUNTRY_ISOALPHA3   "GBR"
+IDS_NDRIVEFILTERS       "NDrive, Mappy GPS (*.kml)|*.kml|"
+IDS_TOOLTIP_UP          "Up"
+IDS_TOOLTIP_DOWN        "Down"
+IDS_TOOLTIP_ADD         "Insert"
+IDS_TOOLTIP_REMOVE      "Remove"
+IDS_TOOLTIP_INVERT      "Reverse"
+IDS_TOOLTIP_EDITOR      "Open Editor"
+IDS_TOOLTIP_BT_EXPORT   "Export"
+IDS_TOOLTIP_BT_EXIT     "Exit"
+IDS_TOOLTIP_BT_OPEN     "Open an existing itinerary"
+IDS_TOOLTIP_CFG_SETTINGS"Edit Settings"
+IDS_TOOLTIP_SEARCH      "Search"
+IDS_DECIMAL_DEGREES     "Decimal degrees"
+IDS_DEGREES_MINUTES     "Degrees/Minutes"
+IDS_DEGREES_MINUTES_SECONDS "Degrees/Minutes/Seconds"
+IDS_COORD_FORMAT        "Coordinate"
+IDS_MPFCTRFILTERS       "MapFactor GPS Navigation (*.xml)|*.xml|"
+IDS_CFG_OPT_DISPLAY     "Display options"
+IDS_CFG_DISPLAY_NUMBER  "Display waypoint numbers"
+IDS_CFG_BACK_HYBRID     "Hybrid"
+IDS_TOOLTIP_SELECT_ALL  "Select all"
+IDS_TOOLTIP_UNSELECT_ALL"Unselect all"
+IDS_WPTFILTERS          "OziExplorer Waypoints (*.wpt)|*.wpt|"
+IDS_OSMFILTERS          "OpenStreetMap XML (*.osm)|*.osm|"
+IDS_PROVIDER_HERE_API   "HERE"
+IDS_ITF13FILTERS        "Sygic GPS Navigation 13, 14, 15, 16 & 17 (*.itf)|*.itf|"
+IDS_PROVIDER_TOMTOM     "TomTom Maps"
+IDS_HERE_MAPS_VIEW      "Show in HERE"
+IDS_HERE_MAPS_LINK      "http://here.com/map=%f,%f,16/title=%s"
+IDS_HEREFILTERS         "HERE Maps||"
+IDS_ITINERARY_THRILLING "Thrilling"
+IDS_VEHICLE_TYPE        "Vehicle"
+IDS_VEHICLE_CAR			"Car"
+IDS_VEHICLE_MOTORBIKE   "Motorcycle"
+IDS_WEB_EDITOR_LANG     "en"
+IDS_CFG_TRUCK_HEIGHT    "Height (meters)"
+IDS_CFG_TRUCK_WIDTH     "Width (meters)"
+IDS_CFG_TRUCK_LENGTH    "Length (meters)"
+IDS_CFG_TRUCK_TRAILERS  "Trailers count"
+IDS_CFG_TRUCK_LIMITED_WEIGHT "Weight (tons)"
+IDS_CFG_TRUCK_WEIGHT_AXLE    "Weight per axle (tons)"
+IDS_CFG_TRUCK_CATEGORY       "Category"
+IDS_TRUCK_NO_CATEGORY           "No category"
+IDS_TRUCK_PUBLIC_TRANSPORT      "Public transport"
+IDS_TRUCK_COMMON_GOODS          "Common goods"
+IDS_TRUCK_HAZARDOUS_EXPLOSIVE   "Explosive material"
+IDS_TRUCK_HAZARDOUS_GAS         "Gas"
+IDS_TRUCK_HAZARDOUS_FLAMMABLE   "Flammable material"
+IDS_TRUCK_HAZARDOUS_COMBUSTIBLE "Combustible material"
+IDS_TRUCK_HAZARDOUS_ORGANIC     "Organic material"
+IDS_TRUCK_HAZARDOUS_POISON      "Poison"
+IDS_TRUCK_HAZARDOUS_RADIOACTIVE "Radio-active material"
+IDS_TRUCK_HAZARDOUS_CORROSIVE   "Corrosive material"
+IDS_TRUCK_HAZARDOUS_POISONOUS   "Materials that are poisonous upon inhalation"
+IDS_TRUCK_HAZARDOUS_HARMFUL     "Materials that are harmful to water"
+IDS_TRUCK_HAZARDOUS_OTHER       "Other types of hazardous materials"
+IDS_TRUCK_HAZARDOUS_ALL         "All types of hazardous materials"
+IDS_ERR_TRUCK_HEIGHT            "Truck height value must lie between %d and %d meters."
+IDS_ERR_TRUCK_WIDTH             "Truck width value must lie between %d and %d meters."
+IDS_ERR_TRUCK_LENGTH            "Truck length value must lie between %d and %d meters."
+IDS_ERR_TRUCK_LIMITED_WEIGHT    "Truck weight value must lie between %d and %d tons."
+IDS_ERR_TRUCK_WEIGHT_AXLE       "Truck weight per axle value must lie between %d and %d tons."
+IDS_VEHICLE_CAMPERVAN           "Campervan"
+IDS_VEHICLE_BUS                 "Bus"
+IDS_VMMFILTERS                  "ViaMichelin Route planner||"
+IDS_TTDFILTERS                  "Tomtom MyDrive||"
+IDS_CUT_ITN_RIDER               "Tomtom Rider"
+IDS_GPXDAIMLER50FILTERS         "Daimler NTG 5.0 GPX (*.gpx)|*.gpx|"
+IDS_GPXDAIMLER55FILTERS         "Daimler NTG 5.5 GPX (*.gpx)|*.gpx|"
+IDS_GPXDAIMLERUBXFILTERS        "Daimler NTG MBUX GPX (*.gpx)|*.gpx|"
+IDS_XMLFILTERS                  "Smart Tomtom MyRoutes (*.xml)|*.xml|"
+IDS_CP10FILTERS				    "CoPilot 10 (*.trp)|*.trp|"
+IDS_PROVIDER_GEOPORTAL_API      "IGN GeoPortal"
+IDS_GBCFILTERS                  "Garmin Zumo, GPX BaseCamp (*.gpx)|*.gpx|"
+IDS_CLEAR_FAV                   "Clear favorites"
+IDS_CONFIRM_CLEAR_FAV           "Do you want to really remove all the favorites ?"
+IDS_URLSYGICFILTERS             "Sygic URL (*.html)|*.html|"
+END
+/////////////////////////////////////////////////////////////////////////////
+
+
+/////////////////////////////////////////////////////////////////////////////
+// French (France) resources
+LANGUAGE LANG_FRENCH, SUBLANG_FRENCH
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE
+BEGIN
+IDS_ABOUTBOX            "&A propos de " SOFT_NAME "..."
+IDS_LONGITUDE           "Longitude"
+IDS_LATITUDE            "Latitude"
+IDS_ADDRESS             "Nom"
+IDS_OPENFILTERS         "Tous les formats|%s|"
+IDS_ITNFILTERS          "TomTom Route (*.itn)|*.itn|"
+IDS_GPXFILTERS          "GPS eXchange 1.0 (*.gpx)|*.gpx|"
+IDS_ERROPEN             "Erreur de lecture du fichier."
+IDS_ERRSAVE             "Erreur d'ecriture du fichier."
+IDS_ERRITN              "Aucun itinéraire dans le fichier."
+IDS_RTEFILTERS          "Garmin PCX5, CartoExploreur (*.rte, *.wpt)|*.rte;*.wpt|"
+IDS_BT_EXPORT           "&Exporter"
+IDS_BT_OPEN             "&Ouvrir"
+IDS_BT_EXIT             "&Quitter"
+IDS_AXEFILTERS          "Microsoft AutoRoute (*.axe)|*.axe|"
+IDS_CSVFILTERS          "CSV (*.csv)|*.csv|"
+IDS_KMLFILTERS          "Google Earth (*.kml)|*.kml|"
+IDS_TTMFILTERS          "TomTom Home||"
+IDS_LABEL_EXPORT        "Format d'exportation :"
+IDS_REMOVE_COMMA        "Enlever les virgules"
+IDS_CUT_ITN             "Scinder"
+IDS_EXT_AXE             "Convertion étendue"
+IDS_REMOVE_ACCENTS      "Enlever les accents"
+IDS_NONE                "Non"
+IDS_CUT_ITN_TT3         "TomTom 3"
+IDS_CUT_ITN_TT5         "TomTom 5"
+IDS_CUT_ITN_CUSTOM      "Manuel"
+IDS_OPTIONS             "Options"
+IDS_MN5FILTERS          "Navigon MN5 & Mio (*.rte)|*.rte|"
+IDS_DATFILTERS          "Destinator PN (*.dat)|*.DAT|"
+IDS_MN4FILTERS          "Navigon MN 4 & 5, MioMap 2 (*.rte)|*.rte|"
+IDS_FROM_TO             "De %s à %s"
+IDS_RDNFILTERS          "IGN Rando (*.rdn)|*.rdn|"
+IDS_BCRFILTERS          "Marco Polo, MTP & OnRoute (*.bcr)|*.bcr|"
+IDS_AXGFILTERS          "Microsoft AutoRoute GB (*.axg)|*.axg|"
+IDS_PTMFILTERS          "Microsoft MapPoint (*.ptm)|*.ptm|"
+IDS_ESTFILTERS          "Microsoft Streets & Trips (*.est)|*.est|"
+IDS_GDBFILTERS          "Garmin MapSource 6 (*.gdb)|*.gdb|"
+IDS_ALLFILTERS          "Tous les fichiers (*.*)|*.*||"
+IDS_UP                  "Monter"
+IDS_DOWN                "Descendre"
+IDS_ADD                 "Ajouter"
+IDS_REMOVE              "Supprimer"
+IDS_MODIFY              "Modifier"
+IDS_ERR_LATITUDE        "La latitude doit être comprise entre %d et %d."
+IDS_ERR_LONGITUDE       "La longitude doit être comprise entre %d et %d."
+IDS_WAYPOINTS_NB        "Etapes : %d  "
+IDS_OZIFILTERS          "OziExplorer Route (*.rte)|*.rte|"
+IDS_RT2FILTERS          "OziExplorer CE Route (*.rt2)|*.rt2|"
+IDS_INVERT              "Inverser"
+IDS_MAGFILTERS          "Magellan SD (*.rte, *.upt)|*.rte;*.upt|"
+IDS_EXPLORIST           "eXplorist"
+IDS_TEMPLATE            "Modèle"
+IDS_AXTFILTERS          "Modèles AutoRoute (*.axt)|*.axt|"
+IDS_PTTFILTERS          "Modèles MapPoint (*.ptt)|*.ptt|"
+IDS_STTFILTERS          "Modèles Streets & Trips (*.stt)|*.stt|"
+IDS_TRLFILTERS          "Polstar PolNav (*.trl)|*.trl|"
+IDS_URLFILTERS          "Lien Google Maps (*.url)|*.url|"
+IDS_NAME                "Nom :"
+IDS_FILENAME            "Fichier : %s"
+IDS_ROUTE               "Itinéraires"
+IDS_UNKNOWN             "Inconnu"
+IDS_BADFORMAT           "Format de fichier inconnu."
+IDS_MN6FILTERS          "Navigon MN 6 (*.rte)|*.rte|"
+IDS_GOOGLE_MAP_VIEW     "Afficher dans Google Maps"
+IDS_VIRTUAL_EARTH_VIEW  "Afficher dans Bing Maps"
+IDS_MSN_VE_LINK         "http://local.live.com/default.aspx?cp=%f~%f&style=r&lvl=10&v=2&sp=an.%f_%f_%05d_%s"
+IDS_GOOGLE_MAPS_LINK    BASE_URL "ggl_maps.html?id=%d&lat=%f&lng=%f&name=%s&cmt=%s"
+IDS_EDITOR              "Editeur"
+IDS_GOOGLE_LANG         "fr"
+IDS_SEARCH              "Rechercher"
+IDS_SEARCH_RESULTS      "Résultats de la recherche"
+IDS_RESULTS             "%d résultats"
+IDS_ITINERARY           "Itinéraire"
+IDS_SEARCHING           "En cours..."
+IDS_TOOLTIP_CALCULATE   "Calculer l'itinéraire"
+IDS_TOOLTIP_VIEWALL     "Voir l'itinéraire entier"
+IDS_NETWORK_ERR         SOFT_NAME " a détecté une erreur réseau. Vérifiez votre connexion réseau et réessayez.\n Error 0x%08X (%s)"
+IDS_DOWNLOADING         "Téléchargement..."
+IDS_PROVIDER_WAZE_USA   "Waze USA"
+IDS_PROVIDER_WAZE_WORLD "Waze World"
+IDS_GEO_SERVER_ERROR    "La recherche a échouée pour une raison inconnue."
+IDS_GEO_MISSING_ADDRESS "Le champ de recherche est vide."
+IDS_GEO_UNKNOWN_ADDRESS "Aucun endroit n'a pu être trouvé pour « %s ». Ceci peut être dû au fait que l'adresse soit relativement nouvelle, ou incorrecte."
+IDS_UNAVAILABLE_ADDRESS "Le résultat de la recherche « %s » n'as pas pû etre retourné pour des raisons légales ou contractuelles."
+IDS_NEW_VERSION         "Une nouvelle version d'" SOFT_NAME " (%s) est disponible sur %s."
+IDS_TOOLTIP_CLEARROUTE  "Effacer l'itinéraire"
+IDS_ADVICE              "Cliquer sur la carte pour ajouter un point. Un glisser/déposer sur un point permet de le déplacer."
+IDS_ROUTING_PROGRESS    "Calcul de l'itinéraire de %s à %s..."
+IDS_ROUTING_ERROR       "Impossible de calculer l'itinéraire de %s à %s. Verifiez la position des points et réessayez."
+IDS_ROUTING_SUCESS      "L'itinéraire le plus rapide de %s à %s a été calculé avec succès."
+IDS_TOOLTIP_REMOVEALL   "Tous supprimer"
+IDS_CONFIRM_REMOVE      "Voulez-vous vraiment supprimer toutes les étapes de l'itinéraire ?"
+IDS_EMPTY               " "
+IDS_TOOLTIP_OPTIMISE    "Optimiser l'itinéraire"
+IDS_POI                 "Points d’intérêt"
+IDS_SUMMARY             "Distance : "
+IDS_ZOOM_LEVELS         "5 (Pays),6,7 (Région),8,9,10,11 (Très grande ville),12 (Grande ville),13,14,15 (Quartier),16 (Rue)"
+IDS_GPGFILTERS          "Garmin Nüvi, GPX MapSource (*.gpx)|*.gpx|"
+IDS_LOCFILTERS          "XML Location (*.loc)|*.loc|"
+IDS_LOCALE_SETTINGS     "Utiliser les paramètres régionaux"
+IDS_GGMFILTERS          "Google Maps||"
+IDS_PRINT_VERSION       "Version imprimable"
+IDS_CONFIRM_CLOSE       "Les modifications de l'itinéraire vont être perdus. Souhaitez-vous continuer ?"
+IDS_SEARCH_NEAR_FROM    "Recherche près de :"
+IDS_SEARCH_LOCATION     "Rechercher un lieu"
+IDS_SEARCH_PROXIMITY    "Rechercher à proximité"
+IDS_NO_PROXIMITY        "Sélectionner un point"
+IDS_CFG_AUTO_CALC       "Recalculer automatiquement l'itinéraire"
+IDS_CFG_ROUTE_PROVIDER  "Fournisseur d'itinéraire"
+IDS_CFG_SETTINGS        "Configuration"
+IDS_CFG_DIST_MILES      "Afficher les distances en miles"
+IDS_CFG_BACK_MAP        "Carte routière"
+IDS_CFG_BACK_SAT        "Vue satellite"
+IDS_XVMFILTERS          "ViaMichelin (*.xvm)|*.xvm|"
+IDS_FAVORITES           "Favoris"
+IDS_MPSFILTERS          "Garmin MapSource 5 (*.mps)|*.mps|"
+IDS_TRPFILTERS          "CoPilot 6 & 7 (*.trp)|*.trp|"
+IDS_SHAREVIOLATION      "Impossible de lire le fichier car il est déjà ouvert par une autre application."
+IDS_TOOLTIP_VALIDATE    "Valider les modifications"
+IDS_ADD_TO_TOMTOM       "Ajouter au TomTom"
+IDS_BCKFILTERS          "Becker Traffic Assist (*.rte)|*.rte|"
+IDS_ROUTEFILTERS        "Navigon MN 7, iPhone (*.route, *.store, *.targets)|*.route;*.store;*.targets|"
+IDS_LMXFILTERS          "Nokia Landmark Exchange (*.lmx)|*.lmx|"
+IDS_ALTITUDE            "Altitude"
+IDS_SNIPPET             "Description"
+IDS_DEFAULT             "Défaut"
+IDS_INFORAD             "Inforad"
+IDS_COLUMN              "Colonne %02d"
+IDS_LOCALE_SDECIMAL     "Symbole décimal"
+IDS_LOCALE_SLIST        "Séparateur de colonnes"
+IDS_CFG_AVOID_HIGHWAY   "Éviter les autoroutes"
+IDS_CFG_AVOID_TOLLS     "Éviter les sections à péage"
+IDS_CFG_STRAIGHT_LINES  "Lignes droites"
+IDS_BING_LANG           "fr-FR"
+IDS_CFG_OPT_ITN         "Itinéraire"
+IDS_CFG_BACKGROUND      "Fonds de cartes"
+IDS_SEND_TO_NVGFRESH    "Ajouter au Navigon"
+IDS_IMPORT_FAV          "Importer les favoris"
+IDS_EXPORT_FAV          "Exporter les favoris"
+IDS_TOMTOM_MAP_VIEW     "Afficher dans TomTom Routes"
+IDS_TOMTOM_MAPS_LINK    "http://www.routes.tomtom.com/map/%s/?center=%s&zoom=10&ui=8"
+IDS_APPEND_ROUTE        "Ajouter à l'itinéraire actuel"
+IDS_NVGFILTERS          "Navigon Fresh (*.freshroute)|*.freshroute|"
+IDS_SEND_TO_NAVGATE     "Ajouter au Pioneer Navgate"
+IDS_PIONEER             "Pioneer Navgate"
+IDS_SEND_TO_MIOMORE     "Ajouter au Mio/Navman"
+IDS_NVMFILTERS          "Navman S-Series (*.xml)|*.xml|"
+IDS_ITFFILTERS          "Sygic McGuider (*.itf)|*.itf|"
+IDS_DESTINATOR          "Destinator"
+IDS_SEND_TO_GARMIN      "Ajouter au Garmin"
+IDS_TRBFILTERS          "Tripy (*.trb)|*.trb|"
+IDS_EXPORT_ITINERARY    "Exportation de l'itinéraire"
+IDS_START_EXPORT        "Préparation de l'exportation..."
+IDS_SAVE_EXPORT         "Sauvegarde de l'itinéraire dans le fichier %s"
+IDS_TOOLTIP_FORCE_ROAD  "Placer les points sur la route la plus proche"
+IDS_GPLFILTERS          "Medion GoPal (*.xml)|*.xml|"
+IDS_FLKFILTERS          "Falk Navigator (*.tour)|*.tour|"
+IDS_KRTFILTERS          "klickTel Routenplaner (*.krt)|*.krt|"
+IDS_TKFILTERS           "Kompass (*.tk)|*.tk|"
+IDS_CP8FILTERS          "CoPilot 8 & 9 (*.trp)|*.trp|"
+IDS_TRACK               "Traces"
+IDS_WAYPOINTS           "Listes de points"
+IDS_NOTITLE             "Sans titre"
+IDS_ARRAYDESC           "%s (%d points)"
+IDS_CHOOSE_LABEL        "Le fichier contient plusieurs listes de points. Veuillez sélectionner celle qui sera utilisée comme itinéraire."
+IDS_CHOOSE_TITLE        "Choisir un itinéraire"
+IDS_TRIPY_ERROR         "Une erreur de communication avec le serveur Tripy est survenue."
+IDS_TOOMANYPOINTS       "L'itinéraire en cours contient beaucoup de points. L'ouverture de l'éditeur avec un nombre trop important de points peut entrainer une baisse de performance et un affichage très lent.\nSouhaitez-vous continuer ?"
+IDS_PLEASEWAIT          "Merci de patienter..."
+IDS_TXTFILTERS          "GoClever, Mireo viaGPS 3.0 (*.txt)|*.txt|"
+IDS_CFG_AUTO_ADD_STEP   "Directement ajouter une étape en cliquant sur une route"
+IDS_CFG_BACK_TOPO       "Terrain"
+IDS_TOOLTIP_PRINT       "Imprimer"
+IDS_PROVIDER_GOOGLE_MAP "Google Maps"
+IDS_PROVIDER_BING_API   "Microsoft Bing Maps"
+IDS_PROVIDER_VIAMICHLIN "ViaMichelin"
+IDS_ITINERARY_TYPE      "Type d'itinéraire"
+IDS_ITINERARY_DEFAULT   "Conseillé"
+IDS_ITINERARY_QUICKEST     "Plus rapide"
+IDS_ITINERARY_SHORTEST     "Plus court"
+IDS_ITINERARY_SIGHTSEEING  "Découverte"
+IDS_ITINERARY_ECONOMICAL   "Economique"
+IDS_VEHICLE_FOOT        "Piéton"
+IDS_VEHICLE_BIKE        "Vélo"
+IDS_VEHICLE_TRUCK       "Poids lourd"
+IDS_VIAMICHELIN_LANG    "fra"
+IDS_PROVIDER_OSM        "OpenStreetMap"
+IDS_UPOIFILTERS         "iGo 8 POI (*.upoi)|*.upoi|"
+IDS_UPOI80FILTERS       "iGo 8.0 POI (*.upoi)|*.upoi|"
+IDS_UPOI83FILTERS       "iGo 8.3 POI (*.upoi)|*.upoi|"
+IDS_CONFIRM_READ_URL    "Un lien hypertexte a été détecté. Voulez-vous qu'il soit interprété ?"
+IDS_PROVIDER_TRIPY_RTWEB"Tripy RoadTracer Web"
+IDS_OV2FILTERS          "TomTom POI (*.ov2)|*.ov2|"
+IDS_ITF11FILTERS        "Sygic GPS Navigation 11 & 12 (*.itf)|*.itf|"
+IDS_RTFILTERS           "GoRider, Mireo viaGPS 4.5 (*.rt)|*.rt|"
+IDS_PLTFILTERS          "OziExplorer Track (*.plt)|*.plt|"
+IDS_COUNTRY_ISOALPHA3   "FRA"
+IDS_NDRIVEFILTERS       "NDrive, Mappy GPS (*.kml)|*.kml|"
+IDS_TOOLTIP_UP          "Monter l'étape d'un cran"
+IDS_TOOLTIP_DOWN        "Descendre l'étape d'un cran"
+IDS_TOOLTIP_ADD         "Ajouter une étape"
+IDS_TOOLTIP_REMOVE      "Supprimer l'étape"
+IDS_TOOLTIP_INVERT      "Inverser l'itinéraire"
+IDS_TOOLTIP_EDITOR      "Ouvrir l'éditeur"
+IDS_TOOLTIP_BT_EXPORT   "Exporter l'itinéraire"
+IDS_TOOLTIP_BT_EXIT     "Quitter l'aplication"
+IDS_TOOLTIP_BT_OPEN     "Ouvrir un itinéraire"
+IDS_TOOLTIP_CFG_SETTINGS"Changer les options"
+IDS_TOOLTIP_SEARCH      "Lancer une recherche"
+IDS_DECIMAL_DEGREES     "Degrés décimal"
+IDS_DEGREES_MINUTES     "Degrés/Minutes"
+IDS_DEGREES_MINUTES_SECONDS "Degrés/Minutes/Secondes"
+IDS_COORD_FORMAT        "Coordonnées"
+IDS_MPFCTRFILTERS       "MapFactor GPS Navigation (*.xml)|*.xml|"
+IDS_CFG_OPT_DISPLAY     "Affichage"
+IDS_CFG_DISPLAY_NUMBER  "Afficher les numéros des étapes"
+IDS_CFG_BACK_HYBRID     "Mixte"
+IDS_TOOLTIP_SELECT_ALL  "Sélectionner tout"
+IDS_TOOLTIP_UNSELECT_ALL"Désélectionner tout"
+IDS_WPTFILTERS          "OziExplorer Waypoints (*.wpt)|*.wpt|"
+IDS_OSMFILTERS          "OpenStreetMap XML (*.osm)|*.osm|"
+IDS_PROVIDER_HERE_API   "HERE"
+IDS_ITF13FILTERS        "Sygic GPS Navigation 13, 14, 15, 16 & 17 (*.itf)|*.itf|"
+IDS_PROVIDER_TOMTOM     "TomTom Maps"
+IDS_HERE_MAPS_VIEW      "Afficher dans HERE"
+IDS_HERE_MAPS_LINK      "http://here.com/map=%f,%f,16/title=%s"
+IDS_HEREFILTERS         "HERE Maps||"
+IDS_ITINERARY_THRILLING "Sinueux"
+IDS_VEHICLE_TYPE        "Véhicule"
+IDS_VEHICLE_CAR			"Voiture"
+IDS_VEHICLE_MOTORBIKE   "Motocyclette"
+IDS_WEB_EDITOR_LANG     "fr"
+IDS_CFG_TRUCK_HEIGHT    "Hauteur (mètres)"
+IDS_CFG_TRUCK_WIDTH     "Largeur (mètres)"
+IDS_CFG_TRUCK_LENGTH    "Longueur (mètres)"
+IDS_CFG_TRUCK_TRAILERS  "Nombre de remorques"
+IDS_CFG_TRUCK_LIMITED_WEIGHT "Poids (tonnes)"
+IDS_CFG_TRUCK_WEIGHT_AXLE    "Poids par axe (tonnes)"
+IDS_CFG_TRUCK_CATEGORY       "Categorie"
+IDS_TRUCK_NO_CATEGORY           "Aucune"
+IDS_TRUCK_PUBLIC_TRANSPORT      "Transport public"
+IDS_TRUCK_COMMON_GOODS          "Bien commun"
+IDS_TRUCK_HAZARDOUS_EXPLOSIVE   "Matières explosives"
+IDS_TRUCK_HAZARDOUS_GAS         "Gas"
+IDS_TRUCK_HAZARDOUS_FLAMMABLE   "Matières inflammables"
+IDS_TRUCK_HAZARDOUS_COMBUSTIBLE "Matières comburantes"
+IDS_TRUCK_HAZARDOUS_ORGANIC     "Matières organiques"
+IDS_TRUCK_HAZARDOUS_POISON      "Matières toxiques"
+IDS_TRUCK_HAZARDOUS_RADIOACTIVE "Matières radioactives"
+IDS_TRUCK_HAZARDOUS_CORROSIVE   "Matières corrosives"
+IDS_TRUCK_HAZARDOUS_POISONOUS   "Matières nocives"
+IDS_TRUCK_HAZARDOUS_HARMFUL     "Matières dangereuses pour le milieu aquatique"
+IDS_TRUCK_HAZARDOUS_OTHER       "Autres marchandises dangereuses"
+IDS_TRUCK_HAZARDOUS_ALL         "Tous types de substances dangereuses"
+IDS_ERR_TRUCK_HEIGHT            "La hauteur doit être comprise entre %d et %d mètres."
+IDS_ERR_TRUCK_WIDTH             "La largeur doit être comprise entre %d et %d mètres."
+IDS_ERR_TRUCK_LENGTH            "La longueur doit être comprise entre %d et %d mètres."
+IDS_ERR_TRUCK_LIMITED_WEIGHT    "Le poids doit être comprise entre %d et %d tonnes."
+IDS_ERR_TRUCK_WEIGHT_AXLE       "Le poids par axe doit être comprise entre %d et %d tonnes."
+IDS_VEHICLE_CAMPERVAN           "Camping car"
+IDS_VEHICLE_BUS                 "Bus"
+IDS_VMMFILTERS                  "Itinéraires ViaMichelin||"
+IDS_TTDFILTERS                  "Tomtom MyDrive||"
+IDS_CUT_ITN_RIDER               "Tomtom Rider"
+IDS_GPXDAIMLER50FILTERS         "Daimler NTG 5.0 GPX (*.gpx)|*.gpx|"
+IDS_GPXDAIMLER55FILTERS         "Daimler NTG 5.5 GPX (*.gpx)|*.gpx|"
+IDS_GPXDAIMLERUBXFILTERS        "Daimler NTG MBUX GPX (*.gpx)|*.gpx|"
+IDS_XMLFILTERS                  "Smart Tomtom MyRoutes (*.xml)|*.xml|"
+IDS_CP10FILTERS				    "CoPilot 10 (*.trp)|*.trp|"
+IDS_PROVIDER_GEOPORTAL_API      "IGN GeoPortail"
+IDS_GBCFILTERS                  "Garmin Zumo, GPX BaseCamp (*.gpx)|*.gpx|"
+IDS_CLEAR_FAV                   "Effacer les favoris"
+IDS_CONFIRM_CLEAR_FAV           "Voulez-vous vraiment supprimer tous les favoris ?"
+IDS_URLSYGICFILTERS             "Sygic URL (*.html)|*.html|"
+END
+/////////////////////////////////////////////////////////////////////////////
+
+
+/////////////////////////////////////////////////////////////////////////////
+// Dutch (Netherlands) resources
+LANGUAGE LANG_DUTCH, SUBLANG_DUTCH
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE
+BEGIN
+IDS_ABOUTBOX            "&Over " SOFT_NAME "..."
+IDS_LONGITUDE           "Lengtegraad"
+IDS_LATITUDE            "Breedtegraad"
+IDS_ADDRESS             "naam"
+IDS_OPENFILTERS         "Alle formaten|%s|"
+IDS_ITNFILTERS          "TomTom Route (*.itn)|*.itn|"
+IDS_GPXFILTERS          "GPS eXchange 1.0 (*.gpx)|*.gpx|"
+IDS_ERROPEN             "Het bestand kan niet worden gelezen."
+IDS_ERRSAVE             "Het bestand kan niet worden bewaard."
+IDS_ERRITN              "Het bestand bevat geen enkele route."
+IDS_RTEFILTERS          "Garmin PCX5 (*.rte, *.wpt)|*.rte;*.wpt|"
+IDS_BT_EXPORT           "Opslaan"
+IDS_BT_OPEN             "Open route"
+IDS_BT_EXIT             "Sluiten"
+IDS_AXEFILTERS          "Microsoft AutoRoute (*.axe)|*.axe|"
+IDS_CSVFILTERS          "CSV (*.csv)|*.csv|"
+IDS_KMLFILTERS          "Google Earth (*.kml)|*.kml|"
+IDS_TTMFILTERS          "TomTom Home||"
+IDS_LABEL_EXPORT        "Opslaan met extensie:"
+IDS_REMOVE_COMMA        "Verwijder Komma's"
+IDS_CUT_ITN             "Split"
+IDS_EXT_AXE             "Verlengde convertie"
+IDS_REMOVE_ACCENTS      "Verwijder accenten"
+IDS_NONE                "Néén"
+IDS_CUT_ITN_TT3         "TomTom 3"
+IDS_CUT_ITN_TT5         "TomTom 5"
+IDS_CUT_ITN_CUSTOM      "Manueel"
+IDS_OPTIONS             "Opties"
+IDS_MN5FILTERS          "Navigon MN5 & Mio (*.rte)|*.rte|"
+IDS_DATFILTERS          "Destinator PN (*.dat)|*.DAT|"
+IDS_MN4FILTERS          "Navigon MN 4 & 5, MioMap 2 (*.rte)|*.rte|"
+IDS_FROM_TO             "Van %s tot %s"
+IDS_RDNFILTERS          "IGN Rando (*.rdn)|*.rdn|"
+IDS_BCRFILTERS          "Marco Polo, MTP & OnRoute (*.bcr)|*.bcr|"
+IDS_AXGFILTERS          "Microsoft AutoRoute GB (*.axg)|*.axg|"
+IDS_PTMFILTERS          "Microsoft MapPoint (*.ptm)|*.ptm|"
+IDS_ESTFILTERS          "Microsoft Streets & Trips (*.est)|*.est|"
+IDS_GDBFILTERS          "Garmin MapSource 6 (*.gdb)|*.gdb|"
+IDS_ALLFILTERS          "Alle bestanden (*.*)|*.*||"
+IDS_UP                  "Omhoog"
+IDS_DOWN                "Omlaag"
+IDS_ADD                 "Voeg toe"
+IDS_REMOVE              "Verwijder"
+IDS_MODIFY              "Bewerk"
+IDS_ERR_LATITUDE        "Breedtegraad waarde mag variëren tussen %d and %d."
+IDS_ERR_LONGITUDE       "Lengtegraad waarde mag variëren tussen %d and %d."
+IDS_WAYPOINTS_NB        "Aantal routepunten: %d  "
+IDS_OZIFILTERS          "OziExplorer Route (*.rte)|*.rte|"
+IDS_RT2FILTERS          "OziExplorer CE Route (*.rt2)|*.rt2|"
+IDS_INVERT              "Keer om"
+IDS_MAGFILTERS          "Magellan SD (*.rte, *.upt)|*.rte;*.upt|"
+IDS_EXPLORIST           "eXplorist"
+IDS_TEMPLATE            "Sjabloon"
+IDS_AXTFILTERS          "AutoRoute Templates (*.axt)|*.axt|"
+IDS_PTTFILTERS          "MapPoint Templates (*.ptt)|*.ptt|"
+IDS_STTFILTERS          "Streets & Trips Templates (*.stt)|*.stt|"
+IDS_TRLFILTERS          "Polstar PolNav (*.trl)|*.trl|"
+IDS_URLFILTERS          "Google Maps Link (*.url)|*.url|"
+IDS_NAME                "Naam:"
+IDS_FILENAME            "Bestand: %s"
+IDS_ROUTE               "Routes"
+IDS_UNKNOWN             "Onbekend"
+IDS_BADFORMAT           "Onbekend bestandsformaat."
+IDS_MN6FILTERS          "Navigon MN 6 (*.rte)|*.rte|"
+IDS_GOOGLE_MAP_VIEW     "Bekijk in Google Maps"
+IDS_VIRTUAL_EARTH_VIEW  "Bekijk in Bing Maps"
+IDS_MSN_VE_LINK         "http://local.live.com/default.aspx?cp=%f~%f&style=r&lvl=10&v=2&sp=an.%f_%f_%05d_%s"
+IDS_GOOGLE_MAPS_LINK    BASE_URL "ggl_maps.html?id=%d&lat=%f&lng=%f&name=%s&cmt=%s"
+IDS_EDITOR              "Kaart"
+IDS_GOOGLE_LANG         "nl"
+IDS_SEARCH              "Zoek"
+IDS_SEARCH_RESULTS      "Zoekresultaten"
+IDS_RESULTS             "%d resultaten"
+IDS_ITINERARY           "Route"
+IDS_SEARCHING           "Bezig met zoeken..."
+IDS_TOOLTIP_CALCULATE   "Routeberekening, bekijk route en af te leggen afstand"
+IDS_TOOLTIP_VIEWALL     "Toon alle routepunten"
+IDS_NETWORK_ERR         SOFT_NAME " detecteerde een netwerkfout. Gelieve uw netwerk te controleren en opnieuw te proberen.\n Error 0x%08X (%s)"
+IDS_DOWNLOADING         "Ophalen..."
+IDS_PROVIDER_WAZE_USA   "Waze USA"
+IDS_PROVIDER_WAZE_WORLD "Waze World"
+IDS_GEO_SERVER_ERROR    "Een geocoding verzoek kon niet worden, de reden voor deze fout is niet gekend."
+IDS_GEO_MISSING_ADDRESS "Het zoekveld bevat geen waarde."
+IDS_GEO_UNKNOWN_ADDRESS "Er kan geen locatie of routepunt gevonden worden voor '%s'."
+IDS_UNAVAILABLE_ADDRESS "De geografische locatie kan niet worden getoond vanwege wettelijke of contractuele redenen."
+IDS_NEW_VERSION         "Een nieuwere versie van " SOFT_NAME " (%s) is beschikbaar op %s."
+IDS_TOOLTIP_CLEARROUTE  "Wis routeberekening"
+IDS_ADVICE              "Klik op kaart (óf satelliet óf terrein) om een routepunt aan te brengen. Het routepunt is te verplaatsen door met de muis op de onderzijde van de “druppel” te gaan staan, te klikken, te verslepen en los te laten."
+IDS_ROUTING_PROGRESS    "Bereken route van %s tot %s..."
+IDS_ROUTING_ERROR       "Het is onmogelijk de route te berekenen van %s tot %s. Controleer punten en locaties en probeer opnieuw."
+IDS_ROUTING_SUCESS      "Snelste routeberekening van %s tot %s is met succes opgehaald."
+IDS_TOOLTIP_REMOVEALL   "Verwijder alle routepunten"
+IDS_CONFIRM_REMOVE      "Wilt u werkelijk alle routepunten verwijderen?"
+IDS_EMPTY               " "
+IDS_TOOLTIP_OPTIMISE    "Optimaliseer route"
+IDS_POI                 "Points of Interest"
+IDS_SUMMARY             "Afstand: "
+IDS_ZOOM_LEVELS         "5 (Land),6,7 (Gebied),8,9,10,11 (Grote stad),12 (Stad),13,14,15 (District),16 (Straat)"
+IDS_GPGFILTERS          "Garmin Nüvi, GPX MapSource (*.gpx)|*.gpx|"
+IDS_LOCFILTERS          "XML Location (*.loc)|*.loc|"
+IDS_LOCALE_SETTINGS     "Gebruik locale instellingen"
+IDS_GGMFILTERS          "Google Maps||"
+IDS_PRINT_VERSION       "Afdrukbare versie"
+IDS_CONFIRM_CLOSE       "Wijzigingen zullen verloren gaan, wilt u toch afsluiten ?"
+IDS_SEARCH_NEAR_FROM    "Zoek nabij:"
+IDS_SEARCH_LOCATION     "Zoeken op plaats"
+IDS_SEARCH_PROXIMITY    "Zoeken op nabijheid"
+IDS_NO_PROXIMITY        "Selecteer een tussenpunt a.u.b."
+IDS_CFG_AUTO_CALC       "Automatisch herberekenen van de route"
+IDS_CFG_ROUTE_PROVIDER  "Route bepaald door"
+IDS_CFG_SETTINGS        "Instellingen"
+IDS_CFG_DIST_MILES      "Toon de afstand in mijlen"
+IDS_CFG_BACK_MAP        "Kaart"
+IDS_CFG_BACK_SAT        "Satelliet"
+IDS_XVMFILTERS          "ViaMichelin (*.xvm)|*.xvm|"
+IDS_FAVORITES           "Favorieten"
+IDS_MPSFILTERS          "Garmin MapSource 5 (*.mps)|*.mps|"
+IDS_TRPFILTERS          "CoPilot 6 & 7 (*.trp)|*.trp|"
+IDS_SHAREVIOLATION      "Kan niet lezen want het is al geopend door een andere toepassing."
+IDS_TOOLTIP_VALIDATE    "Valideer wijzigingen"
+IDS_ADD_TO_TOMTOM       "Voeg toe aan TomTom"
+IDS_BCKFILTERS          "Becker Traffic Assist (*.rte)|*.rte|"
+IDS_ROUTEFILTERS        "Navigon MN 7, iPhone (*.route, *.store, *.targets)|*.route;*.store;*.targets|"
+IDS_LMXFILTERS          "Nokia Landmark Exchange (*.lmx)|*.lmx|"
+IDS_ALTITUDE            "Elevatie"
+IDS_SNIPPET             "Commentaar"
+IDS_DEFAULT             "Standaard"
+IDS_INFORAD             "Inforad"
+IDS_COLUMN              "Kolom %02d"
+IDS_LOCALE_SDECIMAL     "Decimaal scheidingsteken"
+IDS_LOCALE_SLIST        "Kolom scheidingsteken"
+IDS_CFG_AVOID_HIGHWAY   "Snelwegen vermijden"
+IDS_CFG_AVOID_TOLLS     "Tolwegen vermijden"
+IDS_CFG_STRAIGHT_LINES  "Afstand hemelsbreed"
+IDS_BING_LANG           "nl-NL"
+IDS_CFG_OPT_ITN         "Route opties"
+IDS_CFG_BACKGROUND      "Map opties"
+IDS_SEND_TO_NVGFRESH    "Voeg dit routepunt toe aan Navigon"
+IDS_IMPORT_FAV          "Favorieten importeren"
+IDS_EXPORT_FAV          "Favorieten exporteren"
+IDS_TOMTOM_MAP_VIEW     "Bekijk in TomTom Routes"
+IDS_TOMTOM_MAPS_LINK    "http://www.routes.tomtom.com/map/%s/?center=%s&zoom=10&ui=8"
+IDS_APPEND_ROUTE        "Voeg de huidige route"
+IDS_NVGFILTERS          "Navigon Fresh (*.freshroute)|*.freshroute|"
+IDS_SEND_TO_NAVGATE     "Voeg dit routepunt toe aan Pioneer Navgate"
+IDS_PIONEER             "Pioneer Navgate"
+IDS_SEND_TO_MIOMORE     "Voeg dit routepunt toe aan Mio/Navman"
+IDS_NVMFILTERS          "Navman S-Series (*.xml)|*.xml|"
+IDS_ITFFILTERS          "Sygic McGuider (*.itf)|*.itf|"
+IDS_DESTINATOR          "Destinator"
+IDS_SEND_TO_GARMIN      "Voeg dit routepunt toe aan Garmin"
+IDS_TRBFILTERS          "Tripy (*.trb)|*.trb|"
+IDS_EXPORT_ITINERARY    "Export route"
+IDS_START_EXPORT        "Voorbereiden voor export..."
+IDS_SAVE_EXPORT         "Sla route in bestand %s"
+IDS_TOOLTIP_FORCE_ROAD  "Routepunten op wegen plaatsen"
+IDS_GPLFILTERS          "Medion GoPal (*.xml)|*.xml|"
+IDS_FLKFILTERS          "Falk Navigator (*.tour)|*.tour|"
+IDS_KRTFILTERS          "klickTel Routenplaner (*.krt)|*.krt|"
+IDS_TKFILTERS           "Kompass (*.tk)|*.tk|"
+IDS_CP8FILTERS          "CoPilot 8 & 9 (*.trp)|*.trp|"
+IDS_TRACK               "Tracks"
+IDS_WAYPOINTS           "Waypoints"
+IDS_NOTITLE             "Niet benoemd"
+IDS_ARRAYDESC           "%s (%d punten)"
+IDS_CHOOSE_LABEL        "Het bestand bevat een aantal lijsten van punten. Selecteer een die zal worden gebruikt als een routebeschrijving."
+IDS_CHOOSE_TITLE        "Kies een route"
+IDS_TRIPY_ERROR         "Een communicatie fout met de Tripy server was opgetreden."
+IDS_TOOMANYPOINTS       "De huidige route bevat veel punten. Het openen van de editor met te veel punten kan leiden tot een afname van de prestaties en een zeer langzame weergave.\nWil u doorgaan ?"
+IDS_PLEASEWAIT          "Gelieve te wachten..."
+IDS_TXTFILTERS          "GoClever, Mireo viaGPS 3.0 (*.txt)|*.txt|"
+IDS_CFG_AUTO_ADD_STEP   "Neem nieuw routepunt in de route op"
+IDS_CFG_BACK_TOPO       "Terrein"
+IDS_TOOLTIP_PRINT       "Afdrukken"
+IDS_PROVIDER_GOOGLE_MAP "Google Maps"
+IDS_PROVIDER_BING_API   "Microsoft Bing Maps"
+IDS_PROVIDER_VIAMICHLIN "ViaMichelin"
+IDS_ITINERARY_TYPE      "Soort route"
+IDS_ITINERARY_DEFAULT   "Aanbevolen"
+IDS_ITINERARY_QUICKEST     "Snel"
+IDS_ITINERARY_SHORTEST     "Kort"
+IDS_ITINERARY_SIGHTSEEING  "Toeristische route"
+IDS_ITINERARY_ECONOMICAL   "Voordelig"
+IDS_VEHICLE_FOOT        "Te voet"
+IDS_VEHICLE_BIKE        "Fiets"
+IDS_VEHICLE_TRUCK       "Vrachtwagen"
+IDS_VIAMICHELIN_LANG    "nld"
+IDS_PROVIDER_OSM        "OpenStreetMap"
+IDS_UPOIFILTERS         "iGo 8 POI (*.upoi)|*.upoi|"
+IDS_UPOI80FILTERS       "iGo 8.0 POI (*.upoi)|*.upoi|"
+IDS_UPOI83FILTERS       "iGo 8.3 POI (*.upoi)|*.upoi|"
+IDS_CONFIRM_READ_URL    "Een hyperlink is geconstateerd. Wilt u de interpretatie van deze link?"
+IDS_PROVIDER_TRIPY_RTWEB"Tripy RoadTracer Web"
+IDS_OV2FILTERS          "TomTom POI (*.ov2)|*.ov2|"
+IDS_ITF11FILTERS        "Sygic GPS Navigation 11 & 12 (*.itf)|*.itf|"
+IDS_RTFILTERS           "GoRider, Mireo viaGPS 4.5 (*.rt)|*.rt|"
+IDS_PLTFILTERS          "OziExplorer Track (*.plt)|*.plt|"
+IDS_COUNTRY_ISOALPHA3   "NLD"
+IDS_NDRIVEFILTERS       "NDrive, Mappy GPS (*.kml)|*.kml|"
+IDS_TOOLTIP_UP          "Routepunt omhoog"
+IDS_TOOLTIP_DOWN        "Routepunt omlaag"
+IDS_TOOLTIP_ADD         "Voeg toe in decimaal graden"
+IDS_TOOLTIP_REMOVE      "Verwijder het actieve routepunt"
+IDS_TOOLTIP_INVERT      "Keer volgorde om"
+IDS_TOOLTIP_EDITOR      "Open kaart"
+IDS_TOOLTIP_BT_EXPORT   "Opslaan"
+IDS_TOOLTIP_BT_EXIT     "Sluiten"
+IDS_TOOLTIP_BT_OPEN     "Open bestaande route"
+IDS_TOOLTIP_CFG_SETTINGS"Instellingen"
+IDS_TOOLTIP_SEARCH      "Zoek"
+IDS_DECIMAL_DEGREES     "Decimal degrees"
+IDS_DEGREES_MINUTES     "Degrees/Minutes"
+IDS_DEGREES_MINUTES_SECONDS "Degrees/Minutes/Seconds"
+IDS_COORD_FORMAT        "Coördinaten"
+IDS_MPFCTRFILTERS       "MapFactor GPS Navigation (*.xml)|*.xml|"
+IDS_CFG_OPT_DISPLAY     "Weergegeven opties"
+IDS_CFG_DISPLAY_NUMBER  "Geven routepunt nummers"
+IDS_CFG_BACK_HYBRID     "Hybrid"
+IDS_TOOLTIP_SELECT_ALL  "Alles selecteer"
+IDS_TOOLTIP_UNSELECT_ALL"Alles deselecteren"
+IDS_WPTFILTERS          "OziExplorer Waypoints (*.wpt)|*.wpt|"
+IDS_OSMFILTERS          "OpenStreetMap XML (*.osm)|*.osm|"
+IDS_PROVIDER_HERE_API   "HERE"
+IDS_ITF13FILTERS        "Sygic GPS Navigation 13, 14, 15, 16 & 17 (*.itf)|*.itf|"
+IDS_PROVIDER_TOMTOM     "TomTom Maps"
+IDS_HERE_MAPS_VIEW      "Bekijk in HERE"
+IDS_HERE_MAPS_LINK      "http://here.com/map=%f,%f,16/title=%s"
+IDS_HEREFILTERS         "HERE Maps||"
+IDS_ITINERARY_THRILLING "Ppwindend"
+IDS_VEHICLE_TYPE        "Voertuig"
+IDS_VEHICLE_CAR			"Automobiel"
+IDS_VEHICLE_MOTORBIKE   "Motorfiets"
+IDS_WEB_EDITOR_LANG     "nl"
+IDS_CFG_TRUCK_HEIGHT    "Hoogte"
+IDS_CFG_TRUCK_WIDTH     "Breedte"
+IDS_CFG_TRUCK_LENGTH    "Lengte"
+IDS_CFG_TRUCK_TRAILERS  "Aantal trailers"
+IDS_CFG_TRUCK_LIMITED_WEIGHT "Gewicht"
+IDS_CFG_TRUCK_WEIGHT_AXLE    "Gewicht per as"
+IDS_CFG_TRUCK_CATEGORY       "Categorie"
+IDS_TRUCK_NO_CATEGORY           "No category"
+IDS_TRUCK_PUBLIC_TRANSPORT      "Openbaar vervoer"
+IDS_TRUCK_COMMON_GOODS          "Algemeen belang"
+IDS_TRUCK_HAZARDOUS_EXPLOSIVE   "Explosief"
+IDS_TRUCK_HAZARDOUS_GAS         "Gas"
+IDS_TRUCK_HAZARDOUS_FLAMMABLE   "Brandbaar materiaal"
+IDS_TRUCK_HAZARDOUS_COMBUSTIBLE "Combustible materiaal"
+IDS_TRUCK_HAZARDOUS_ORGANIC     "Organisch materiaal"
+IDS_TRUCK_HAZARDOUS_POISON      "Vergiftigen"
+IDS_TRUCK_HAZARDOUS_RADIOACTIVE "Radioactief materiaal"
+IDS_TRUCK_HAZARDOUS_CORROSIVE   "Bijtend materiaal"
+IDS_TRUCK_HAZARDOUS_POISONOUS   "Giftig bij inademing"
+IDS_TRUCK_HAZARDOUS_HARMFUL     "Materials that are harmful to water"
+IDS_TRUCK_HAZARDOUS_OTHER       "Other types of hazardous materials"
+IDS_TRUCK_HAZARDOUS_ALL         "All types of hazardous materials"
+IDS_ERR_TRUCK_HEIGHT            "Truck height value must lie between %d and %d meters."
+IDS_ERR_TRUCK_WIDTH             "Truck width value must lie between %d and %d meters."
+IDS_ERR_TRUCK_LENGTH            "Truck length value must lie between %d and %d meters."
+IDS_ERR_TRUCK_LIMITED_WEIGHT    "Truck weight value must lie between %d and %d tons."
+IDS_ERR_TRUCK_WEIGHT_AXLE       "Truck weight per axle value must lie between %d and %d tons."
+IDS_VEHICLE_CAMPERVAN           "Camper busje"
+IDS_VEHICLE_BUS                 "Bus"
+IDS_VMMFILTERS                  "ViaMichelin Routeplanner||"
+IDS_TTDFILTERS                  "Tomtom MyDrive||"
+IDS_CUT_ITN_RIDER               "Tomtom Rider"
+IDS_GPXDAIMLER50FILTERS         "Daimler NTG 5.0 GPX (*.gpx)|*.gpx|"
+IDS_GPXDAIMLER55FILTERS         "Daimler NTG 5.5 GPX (*.gpx)|*.gpx|"
+IDS_GPXDAIMLERUBXFILTERS        "Daimler NTG MBUX GPX (*.gpx)|*.gpx|"
+IDS_XMLFILTERS                  "Smart Tomtom MyRoutes (*.xml)|*.xml|"
+IDS_CP10FILTERS				    "CoPilot 10 (*.trp)|*.trp|"
+IDS_PROVIDER_GEOPORTAL_API      "IGN GeoPortal"
+IDS_GBCFILTERS                  "Garmin Zumo, GPX BaseCamp (*.gpx)|*.gpx|"
+IDS_CLEAR_FAV                   "Duidelijke favorieten wissen"
+IDS_CONFIRM_CLEAR_FAV           "Wil je echt alle favorieten verwijderen?"
+IDS_URLSYGICFILTERS             "Sygic URL (*.html)|*.html|"
+END
+/////////////////////////////////////////////////////////////////////////////

@@ -1,0 +1,1045 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{eb8740a3-a9e6-4ae7-86b7-58fd8c56669b}</UniqueIdentifier>
+      <Extensions>cpp;c;cxx;rc;def;r;odl;idl;hpj;bat</Extensions>
+    </Filter>
+    <Filter Include="Source Files\Components">
+      <UniqueIdentifier>{19a41445-5ac9-4f2b-a34a-1a9ca821fc2b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Dialog">
+      <UniqueIdentifier>{494b4864-05cb-41d8-8ac7-684181ca487c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Dialog\Header Files">
+      <UniqueIdentifier>{74741b2c-b31c-42ee-b5c0-5829c558f9ea}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Dialog\Source Files">
+      <UniqueIdentifier>{07d89504-fdd4-42d3-a14a-d2a3cf005b65}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Formats">
+      <UniqueIdentifier>{eb1f6d15-de14-477f-84df-beb80d96b359}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Formats\CoPilot">
+      <UniqueIdentifier>{2213906a-683b-4c2d-869f-8b8b3dc55b2e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Formats\CSV">
+      <UniqueIdentifier>{f03eae0c-6eff-4f96-a7cc-df35e8575324}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Formats\Destinator">
+      <UniqueIdentifier>{a2afca30-1e1d-4369-909f-66f730352059}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Formats\Garmin">
+      <UniqueIdentifier>{298bafde-861a-496e-b477-74218cc1f229}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Formats\Google Earth">
+      <UniqueIdentifier>{760b3eee-144a-499e-b184-a89dca0fedf9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Formats\Google Maps">
+      <UniqueIdentifier>{f4245058-c0a0-4389-8635-c40b018b8cbf}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Formats\GPX">
+      <UniqueIdentifier>{3b0b4403-2d3f-44ec-8fe8-5310c3ae252e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Formats\IGN Rando">
+      <UniqueIdentifier>{bca2d97a-83b1-4585-a513-d7ecf47b0c0f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Formats\Magellan">
+      <UniqueIdentifier>{04779a2e-7ac3-44a7-a926-86048c307162}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Formats\Marco Polo">
+      <UniqueIdentifier>{8eb1dccf-e1a0-4dd8-b1c4-83f0499abdb6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Formats\Navigon">
+      <UniqueIdentifier>{e8661adc-b0c6-4fb5-ac13-a54fc8e8341b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Formats\Nokia">
+      <UniqueIdentifier>{5f21bee3-2ed6-4877-94df-17d3c0c4ca88}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Formats\OziExplorer">
+      <UniqueIdentifier>{0b5236f0-5a3b-4275-aaf7-1e77ba7df6e3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Formats\PCX5">
+      <UniqueIdentifier>{e39f9334-6a7c-4c69-99c4-ea04be7d0ad5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Formats\TomTom">
+      <UniqueIdentifier>{fa515ec1-70b3-4190-ad01-6efea8e74f54}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Formats\ViaMichelin">
+      <UniqueIdentifier>{415b0f06-9d55-44ff-a66b-b5ed8805adb8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Formats\XML Location">
+      <UniqueIdentifier>{e75409ea-72e1-47fb-b6fe-30c154197c25}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Formats\Pioneer">
+      <UniqueIdentifier>{592abfa1-da8a-475e-959c-5cc724c35fd9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Formats\MioMore">
+      <UniqueIdentifier>{011389f3-1655-448b-b8d3-1e1cdaa4439d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Formats\Navman">
+      <UniqueIdentifier>{90c7c182-91cb-4895-aca6-c2af4c5e9a29}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Formats\Sygic">
+      <UniqueIdentifier>{0d5118f4-924f-4ad6-9a37-7945159dbae5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Formats\GoPal">
+      <UniqueIdentifier>{ef91529d-07c0-44c4-91ed-4abfb29dde97}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Formats\Falk Navigator">
+      <UniqueIdentifier>{fc3e082e-f569-4bc3-8f75-187e7937eb16}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Formats\klickTel">
+      <UniqueIdentifier>{b267c050-c008-435c-be53-faaa3b39759d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Formats\Kompass">
+      <UniqueIdentifier>{7c178ffc-8661-4d33-8888-439eff0fead5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Formats\Autoroute">
+      <UniqueIdentifier>{f0d5357f-f8e7-4d76-8448-ac3004d7f4d7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Formats\Polstar">
+      <UniqueIdentifier>{713ce043-7043-4161-887b-b940c43b9c98}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Formats\GoClever">
+      <UniqueIdentifier>{1e8be6ce-8b57-4ac4-a4de-9a626d4cf68d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Formats\iGo">
+      <UniqueIdentifier>{512ee2c2-b68b-4a8b-8549-f84ea4585ec4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Formats\NDrive">
+      <UniqueIdentifier>{44f9dc79-169b-484d-abf4-45dfb55318a8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\WebBrowser">
+      <UniqueIdentifier>{5a8ea1c6-e765-428a-83e1-954f8a3326e1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\WebBrowser\Source Files">
+      <UniqueIdentifier>{f5b1c722-e72f-4693-8642-911f8c8b20a3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\WebBrowser\Header Files">
+      <UniqueIdentifier>{08483391-9215-485e-97f0-1e315f5bec3f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{2a0004d7-2164-4346-be8a-b44dccb552bc}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{4a742e70-5955-47be-895c-43d58d3c3f60}</UniqueIdentifier>
+      <Extensions>ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe</Extensions>
+    </Filter>
+    <Filter Include="Source Files\Formats\Map Factor">
+      <UniqueIdentifier>{b9e9d609-3092-4db5-afd6-696aa8b9cc33}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Formats\OpenStreetMap">
+      <UniqueIdentifier>{f5e21912-97fb-4a9d-a104-d86dfe445029}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Formats\Here Maps">
+      <UniqueIdentifier>{f6855dd0-6d92-4afb-9901-dae03006c8f1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Formats\Daimler">
+      <UniqueIdentifier>{60e04d1c-3462-4a1e-880c-a9d19f69344f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Formats\XML">
+      <UniqueIdentifier>{cb83cf30-9bd3-41c2-b96b-649118f26151}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="ITN Converter.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ITN Tools.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="RegParam.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="sendtogps.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="StdAfx.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="travel.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="GpsPoint.cpp">
+      <Filter>Source Files\Components</Filter>
+    </ClCompile>
+    <ClCompile Include="GpsPointArray.cpp">
+      <Filter>Source Files\Components</Filter>
+    </ClCompile>
+    <ClCompile Include="GpsPointView.cpp">
+      <Filter>Source Files\Components</Filter>
+    </ClCompile>
+    <ClCompile Include="GpsRoute.cpp">
+      <Filter>Source Files\Components</Filter>
+    </ClCompile>
+    <ClCompile Include="GpsTrack.cpp">
+      <Filter>Source Files\Components</Filter>
+    </ClCompile>
+    <ClCompile Include="GpsWaypointArray.cpp">
+      <Filter>Source Files\Components</Filter>
+    </ClCompile>
+    <ClCompile Include="NavPointView.cpp">
+      <Filter>Source Files\Components</Filter>
+    </ClCompile>
+    <ClCompile Include="NavRouteView.cpp">
+      <Filter>Source Files\Components</Filter>
+    </ClCompile>
+    <ClCompile Include="AboutDlg.cpp">
+      <Filter>Source Files\Dialog\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ChooseArrayDlg.cpp">
+      <Filter>Source Files\Dialog\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ConfigDlg.cpp">
+      <Filter>Source Files\Dialog\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CsvDlg.cpp">
+      <Filter>Source Files\Dialog\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="EditCtrl.cpp">
+      <Filter>Source Files\Dialog\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="EditorDlg.cpp">
+      <Filter>Source Files\Dialog\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="InsertModify.cpp">
+      <Filter>Source Files\Dialog\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ITN ConverterDlg.cpp">
+      <Filter>Source Files\Dialog\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ITN FileDialog.cpp">
+      <Filter>Source Files\Dialog\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ProgressDlg.cpp">
+      <Filter>Source Files\Dialog\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="SizeableDlg.cpp">
+      <Filter>Source Files\Dialog\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="cp8Writer.cpp">
+      <Filter>Source Files\Formats\CoPilot</Filter>
+    </ClCompile>
+    <ClCompile Include="trpReader.cpp">
+      <Filter>Source Files\Formats\CoPilot</Filter>
+    </ClCompile>
+    <ClCompile Include="trpWriter.cpp">
+      <Filter>Source Files\Formats\CoPilot</Filter>
+    </ClCompile>
+    <ClCompile Include="csvReader.cpp">
+      <Filter>Source Files\Formats\CSV</Filter>
+    </ClCompile>
+    <ClCompile Include="csvWriter.cpp">
+      <Filter>Source Files\Formats\CSV</Filter>
+    </ClCompile>
+    <ClCompile Include="datReader.cpp">
+      <Filter>Source Files\Formats\Destinator</Filter>
+    </ClCompile>
+    <ClCompile Include="datWriter.cpp">
+      <Filter>Source Files\Formats\Destinator</Filter>
+    </ClCompile>
+    <ClCompile Include="communicator.cpp">
+      <Filter>Source Files\Formats\Garmin</Filter>
+    </ClCompile>
+    <ClCompile Include="gdbReader.cpp">
+      <Filter>Source Files\Formats\Garmin</Filter>
+    </ClCompile>
+    <ClCompile Include="gdbWriter.cpp">
+      <Filter>Source Files\Formats\Garmin</Filter>
+    </ClCompile>
+    <ClCompile Include="mpsReader.cpp">
+      <Filter>Source Files\Formats\Garmin</Filter>
+    </ClCompile>
+    <ClCompile Include="mpsWriter.cpp">
+      <Filter>Source Files\Formats\Garmin</Filter>
+    </ClCompile>
+    <ClCompile Include="kmlReader.cpp">
+      <Filter>Source Files\Formats\Google Earth</Filter>
+    </ClCompile>
+    <ClCompile Include="kmlWriter.cpp">
+      <Filter>Source Files\Formats\Google Earth</Filter>
+    </ClCompile>
+    <ClCompile Include="ggmWriter.cpp">
+      <Filter>Source Files\Formats\Google Maps</Filter>
+    </ClCompile>
+    <ClCompile Include="gpxReader.cpp">
+      <Filter>Source Files\Formats\GPX</Filter>
+    </ClCompile>
+    <ClCompile Include="gpxWriter.cpp">
+      <Filter>Source Files\Formats\GPX</Filter>
+    </ClCompile>
+    <ClCompile Include="rdnReader.cpp">
+      <Filter>Source Files\Formats\IGN Rando</Filter>
+    </ClCompile>
+    <ClCompile Include="rdnWriter.cpp">
+      <Filter>Source Files\Formats\IGN Rando</Filter>
+    </ClCompile>
+    <ClCompile Include="magReader.cpp">
+      <Filter>Source Files\Formats\Magellan</Filter>
+    </ClCompile>
+    <ClCompile Include="magWriter.cpp">
+      <Filter>Source Files\Formats\Magellan</Filter>
+    </ClCompile>
+    <ClCompile Include="bcrReader.cpp">
+      <Filter>Source Files\Formats\Marco Polo</Filter>
+    </ClCompile>
+    <ClCompile Include="bcrWriter.cpp">
+      <Filter>Source Files\Formats\Marco Polo</Filter>
+    </ClCompile>
+    <ClCompile Include="mn4Reader.cpp">
+      <Filter>Source Files\Formats\Navigon</Filter>
+    </ClCompile>
+    <ClCompile Include="mn4Writer.cpp">
+      <Filter>Source Files\Formats\Navigon</Filter>
+    </ClCompile>
+    <ClCompile Include="mn5Writer.cpp">
+      <Filter>Source Files\Formats\Navigon</Filter>
+    </ClCompile>
+    <ClCompile Include="mn6Writer.cpp">
+      <Filter>Source Files\Formats\Navigon</Filter>
+    </ClCompile>
+    <ClCompile Include="mn7Writer.cpp">
+      <Filter>Source Files\Formats\Navigon</Filter>
+    </ClCompile>
+    <ClCompile Include="nvgfresh.cpp">
+      <Filter>Source Files\Formats\Navigon</Filter>
+    </ClCompile>
+    <ClCompile Include="nvgReader.cpp">
+      <Filter>Source Files\Formats\Navigon</Filter>
+    </ClCompile>
+    <ClCompile Include="nvgWriter.cpp">
+      <Filter>Source Files\Formats\Navigon</Filter>
+    </ClCompile>
+    <ClCompile Include="routeReader.cpp">
+      <Filter>Source Files\Formats\Navigon</Filter>
+    </ClCompile>
+    <ClCompile Include="routeWriter.cpp">
+      <Filter>Source Files\Formats\Navigon</Filter>
+    </ClCompile>
+    <ClCompile Include="lmxReader.cpp">
+      <Filter>Source Files\Formats\Nokia</Filter>
+    </ClCompile>
+    <ClCompile Include="lmxWriter.cpp">
+      <Filter>Source Files\Formats\Nokia</Filter>
+    </ClCompile>
+    <ClCompile Include="oziReader.cpp">
+      <Filter>Source Files\Formats\OziExplorer</Filter>
+    </ClCompile>
+    <ClCompile Include="oziWriter.cpp">
+      <Filter>Source Files\Formats\OziExplorer</Filter>
+    </ClCompile>
+    <ClCompile Include="pltReader.cpp">
+      <Filter>Source Files\Formats\OziExplorer</Filter>
+    </ClCompile>
+    <ClCompile Include="pltWriter.cpp">
+      <Filter>Source Files\Formats\OziExplorer</Filter>
+    </ClCompile>
+    <ClCompile Include="rt2Reader.cpp">
+      <Filter>Source Files\Formats\OziExplorer</Filter>
+    </ClCompile>
+    <ClCompile Include="rt2Writer.cpp">
+      <Filter>Source Files\Formats\OziExplorer</Filter>
+    </ClCompile>
+    <ClCompile Include="rteReader.cpp">
+      <Filter>Source Files\Formats\PCX5</Filter>
+    </ClCompile>
+    <ClCompile Include="rteWriter.cpp">
+      <Filter>Source Files\Formats\PCX5</Filter>
+    </ClCompile>
+    <ClCompile Include="ItnReader.cpp">
+      <Filter>Source Files\Formats\TomTom</Filter>
+    </ClCompile>
+    <ClCompile Include="itnWriter.cpp">
+      <Filter>Source Files\Formats\TomTom</Filter>
+    </ClCompile>
+    <ClCompile Include="ov2Reader.cpp">
+      <Filter>Source Files\Formats\TomTom</Filter>
+    </ClCompile>
+    <ClCompile Include="ov2Writer.cpp">
+      <Filter>Source Files\Formats\TomTom</Filter>
+    </ClCompile>
+    <ClCompile Include="xvmReader.cpp">
+      <Filter>Source Files\Formats\ViaMichelin</Filter>
+    </ClCompile>
+    <ClCompile Include="xvmWriter.cpp">
+      <Filter>Source Files\Formats\ViaMichelin</Filter>
+    </ClCompile>
+    <ClCompile Include="locWriter.cpp">
+      <Filter>Source Files\Formats\XML Location</Filter>
+    </ClCompile>
+    <ClCompile Include="navgate.cpp">
+      <Filter>Source Files\Formats\Pioneer</Filter>
+    </ClCompile>
+    <ClCompile Include="miomore.cpp">
+      <Filter>Source Files\Formats\MioMore</Filter>
+    </ClCompile>
+    <ClCompile Include="nvmReader.cpp">
+      <Filter>Source Files\Formats\Navman</Filter>
+    </ClCompile>
+    <ClCompile Include="nvmWriter.cpp">
+      <Filter>Source Files\Formats\Navman</Filter>
+    </ClCompile>
+    <ClCompile Include="itfReader.cpp">
+      <Filter>Source Files\Formats\Sygic</Filter>
+    </ClCompile>
+    <ClCompile Include="itfWriter.cpp">
+      <Filter>Source Files\Formats\Sygic</Filter>
+    </ClCompile>
+    <ClCompile Include="gplReader.cpp">
+      <Filter>Source Files\Formats\GoPal</Filter>
+    </ClCompile>
+    <ClCompile Include="gplWriter.cpp">
+      <Filter>Source Files\Formats\GoPal</Filter>
+    </ClCompile>
+    <ClCompile Include="flkReader.cpp">
+      <Filter>Source Files\Formats\Falk Navigator</Filter>
+    </ClCompile>
+    <ClCompile Include="flkWriter.cpp">
+      <Filter>Source Files\Formats\Falk Navigator</Filter>
+    </ClCompile>
+    <ClCompile Include="krtReader.cpp">
+      <Filter>Source Files\Formats\klickTel</Filter>
+    </ClCompile>
+    <ClCompile Include="krtWriter.cpp">
+      <Filter>Source Files\Formats\klickTel</Filter>
+    </ClCompile>
+    <ClCompile Include="tkReader.cpp">
+      <Filter>Source Files\Formats\Kompass</Filter>
+    </ClCompile>
+    <ClCompile Include="tkWriter.cpp">
+      <Filter>Source Files\Formats\Kompass</Filter>
+    </ClCompile>
+    <ClCompile Include="axeReader.cpp">
+      <Filter>Source Files\Formats\Autoroute</Filter>
+    </ClCompile>
+    <ClCompile Include="axeWriter.cpp">
+      <Filter>Source Files\Formats\Autoroute</Filter>
+    </ClCompile>
+    <ClCompile Include="trlReader.cpp">
+      <Filter>Source Files\Formats\Polstar</Filter>
+    </ClCompile>
+    <ClCompile Include="trlWriter.cpp">
+      <Filter>Source Files\Formats\Polstar</Filter>
+    </ClCompile>
+    <ClCompile Include="gclReader.cpp">
+      <Filter>Source Files\Formats\GoClever</Filter>
+    </ClCompile>
+    <ClCompile Include="gclwriter.cpp">
+      <Filter>Source Files\Formats\GoClever</Filter>
+    </ClCompile>
+    <ClCompile Include="upoiReader.cpp">
+      <Filter>Source Files\Formats\iGo</Filter>
+    </ClCompile>
+    <ClCompile Include="upoiWriter.cpp">
+      <Filter>Source Files\Formats\iGo</Filter>
+    </ClCompile>
+    <ClCompile Include="ndriveWriter.cpp">
+      <Filter>Source Files\Formats\NDrive</Filter>
+    </ClCompile>
+    <ClCompile Include="Base64Dispatch.cpp">
+      <Filter>Source Files\WebBrowser\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Navigator.cpp">
+      <Filter>Source Files\WebBrowser\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="PointDispatch.cpp">
+      <Filter>Source Files\WebBrowser\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="RouteDispatch.cpp">
+      <Filter>Source Files\WebBrowser\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="SettingsDispatch.cpp">
+      <Filter>Source Files\WebBrowser\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Utf8Dispatch.cpp">
+      <Filter>Source Files\WebBrowser\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="webbrowser.cpp">
+      <Filter>Source Files\WebBrowser\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="WebExternal.cpp">
+      <Filter>Source Files\WebBrowser\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="mpfctrReader.cpp">
+      <Filter>Source Files\Formats\Map Factor</Filter>
+    </ClCompile>
+    <ClCompile Include="mpfctrWriter.cpp">
+      <Filter>Source Files\Formats\Map Factor</Filter>
+    </ClCompile>
+    <ClCompile Include="LatLngDispatch.cpp">
+      <Filter>Source Files\WebBrowser\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ArrayDispatch.cpp">
+      <Filter>Source Files\WebBrowser\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="jsMapInfos.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="wptWriter.cpp">
+      <Filter>Source Files\Formats\OziExplorer</Filter>
+    </ClCompile>
+    <ClCompile Include="wptReader.cpp">
+      <Filter>Source Files\Formats\OziExplorer</Filter>
+    </ClCompile>
+    <ClCompile Include="osmWriter.cpp">
+      <Filter>Source Files\Formats\OpenStreetMap</Filter>
+    </ClCompile>
+    <ClCompile Include="osmReader.cpp">
+      <Filter>Source Files\Formats\OpenStreetMap</Filter>
+    </ClCompile>
+    <ClCompile Include="Javascript.cpp">
+      <Filter>Source Files\WebBrowser\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Variant.cpp">
+      <Filter>Source Files\WebBrowser\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="HttpRequest.cpp">
+      <Filter>Source Files\WebBrowser\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="AsyncRouteCalculation.cpp">
+      <Filter>Source Files\WebBrowser\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="hereWriter.cpp">
+      <Filter>Source Files\Formats\Here Maps</Filter>
+    </ClCompile>
+    <ClCompile Include="ggmReader.cpp">
+      <Filter>Source Files\Formats\Google Maps</Filter>
+    </ClCompile>
+    <ClCompile Include="hereReader.cpp">
+      <Filter>Source Files\Formats\Here Maps</Filter>
+    </ClCompile>
+    <ClCompile Include="urlReader.cpp">
+      <Filter>Source Files\Formats\Google Maps</Filter>
+    </ClCompile>
+    <ClCompile Include="FileFormat.cpp">
+      <Filter>Source Files\Formats</Filter>
+    </ClCompile>
+    <ClCompile Include="CustomizableDlg.cpp">
+      <Filter>Source Files\Dialog\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="BtnST.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="vmReader.cpp">
+      <Filter>Source Files\Formats\ViaMichelin</Filter>
+    </ClCompile>
+    <ClCompile Include="vmWriter.cpp">
+      <Filter>Source Files\Formats\ViaMichelin</Filter>
+    </ClCompile>
+    <ClCompile Include="ttdWriter.cpp">
+      <Filter>Source Files\Formats\TomTom</Filter>
+    </ClCompile>
+    <ClCompile Include="ttdReader.cpp">
+      <Filter>Source Files\Formats\TomTom</Filter>
+    </ClCompile>
+    <ClCompile Include="gpxDaimlerReader.cpp">
+      <Filter>Source Files\Formats\Daimler</Filter>
+    </ClCompile>
+    <ClCompile Include="gpxDaimlerWriter.cpp">
+      <Filter>Source Files\Formats\Daimler</Filter>
+    </ClCompile>
+    <ClCompile Include="xmlReader.cpp">
+      <Filter>Source Files\Formats\XML</Filter>
+    </ClCompile>
+    <ClCompile Include="xmlWriter.cpp">
+      <Filter>Source Files\Formats\XML</Filter>
+    </ClCompile>
+    <ClCompile Include="cp10Writer.cpp">
+      <Filter>Source Files\Formats\CoPilot</Filter>
+    </ClCompile>
+    <ClCompile Include="gpgWriter.cpp">
+      <Filter>Source Files\Formats\Garmin</Filter>
+    </ClCompile>
+    <ClCompile Include="gbcWriter.cpp">
+      <Filter>Source Files\Formats\Garmin</Filter>
+    </ClCompile>
+    <ClCompile Include="jsProviderInfos.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="cp10Reader.cpp">
+      <Filter>Source Files\Formats\CoPilot</Filter>
+    </ClCompile>
+    <ClCompile Include="urlSygic.cpp">
+      <Filter>Source Files\Formats\Sygic</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="ITN Converter.rc">
+      <Filter>Source Files</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="GpsPoiArray.h">
+      <Filter>Source Files\Components</Filter>
+    </ClInclude>
+    <ClInclude Include="GpsPoint.h">
+      <Filter>Source Files\Components</Filter>
+    </ClInclude>
+    <ClInclude Include="GpsPointArray.h">
+      <Filter>Source Files\Components</Filter>
+    </ClInclude>
+    <ClInclude Include="GpsPointView.h">
+      <Filter>Source Files\Components</Filter>
+    </ClInclude>
+    <ClInclude Include="GpsRoute.h">
+      <Filter>Source Files\Components</Filter>
+    </ClInclude>
+    <ClInclude Include="GpsTrack.h">
+      <Filter>Source Files\Components</Filter>
+    </ClInclude>
+    <ClInclude Include="GpsWaypointArray.h">
+      <Filter>Source Files\Components</Filter>
+    </ClInclude>
+    <ClInclude Include="NavPointView.h">
+      <Filter>Source Files\Components</Filter>
+    </ClInclude>
+    <ClInclude Include="NavRouteView.h">
+      <Filter>Source Files\Components</Filter>
+    </ClInclude>
+    <ClInclude Include="AboutDlg.h">
+      <Filter>Source Files\Dialog\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ChooseArrayDlg.h">
+      <Filter>Source Files\Dialog\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ConfigDlg.h">
+      <Filter>Source Files\Dialog\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CsvDlg.h">
+      <Filter>Source Files\Dialog\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="EditCtrl.h">
+      <Filter>Source Files\Dialog\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="EditorDlg.h">
+      <Filter>Source Files\Dialog\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="InsertModify.h">
+      <Filter>Source Files\Dialog\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ITN ConverterDlg.h">
+      <Filter>Source Files\Dialog\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ITN FileDialog.h">
+      <Filter>Source Files\Dialog\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ProgressDlg.h">
+      <Filter>Source Files\Dialog\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="SizeableDlg.h">
+      <Filter>Source Files\Dialog\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="communicator.h">
+      <Filter>Source Files\Formats\Garmin</Filter>
+    </ClInclude>
+    <ClInclude Include="kmlReader.h">
+      <Filter>Source Files\Formats\Google Earth</Filter>
+    </ClInclude>
+    <ClInclude Include="gpxReader.h">
+      <Filter>Source Files\Formats\GPX</Filter>
+    </ClInclude>
+    <ClInclude Include="rdnReader.h">
+      <Filter>Source Files\Formats\IGN Rando</Filter>
+    </ClInclude>
+    <ClInclude Include="nvgfresh.h">
+      <Filter>Source Files\Formats\Navigon</Filter>
+    </ClInclude>
+    <ClInclude Include="nvgReader.h">
+      <Filter>Source Files\Formats\Navigon</Filter>
+    </ClInclude>
+    <ClInclude Include="routeHeader.h">
+      <Filter>Source Files\Formats\Navigon</Filter>
+    </ClInclude>
+    <ClInclude Include="lmxReader.h">
+      <Filter>Source Files\Formats\Nokia</Filter>
+    </ClInclude>
+    <ClInclude Include="xvmReader.h">
+      <Filter>Source Files\Formats\ViaMichelin</Filter>
+    </ClInclude>
+    <ClInclude Include="navgate.h">
+      <Filter>Source Files\Formats\Pioneer</Filter>
+    </ClInclude>
+    <ClInclude Include="miomore.h">
+      <Filter>Source Files\Formats\MioMore</Filter>
+    </ClInclude>
+    <ClInclude Include="nvmReader.h">
+      <Filter>Source Files\Formats\Navman</Filter>
+    </ClInclude>
+    <ClInclude Include="itfHeader.h">
+      <Filter>Source Files\Formats\Sygic</Filter>
+    </ClInclude>
+    <ClInclude Include="gplReader.h">
+      <Filter>Source Files\Formats\GoPal</Filter>
+    </ClInclude>
+    <ClInclude Include="krtReader.h">
+      <Filter>Source Files\Formats\klickTel</Filter>
+    </ClInclude>
+    <ClInclude Include="axeHeader.h">
+      <Filter>Source Files\Formats\Autoroute</Filter>
+    </ClInclude>
+    <ClInclude Include="trlHeader.h">
+      <Filter>Source Files\Formats\Polstar</Filter>
+    </ClInclude>
+    <ClInclude Include="Base64Dispatch.h">
+      <Filter>Source Files\WebBrowser\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ExternalDispatch.h">
+      <Filter>Source Files\WebBrowser\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Navigator.h">
+      <Filter>Source Files\WebBrowser\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="PointDispatch.h">
+      <Filter>Source Files\WebBrowser\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="RouteDispatch.h">
+      <Filter>Source Files\WebBrowser\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="SettingsDispatch.h">
+      <Filter>Source Files\WebBrowser\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Utf8Dispatch.h">
+      <Filter>Source Files\WebBrowser\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="webbrowser.h">
+      <Filter>Source Files\WebBrowser\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="WebExternal.h">
+      <Filter>Source Files\WebBrowser\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ITN Converter.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ITN Tools.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="RegParam.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="sendtogps.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="StdAfx.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="travel.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="mpfctrHeader.h">
+      <Filter>Source Files\Formats\Map Factor</Filter>
+    </ClInclude>
+    <ClInclude Include="LatLngDispatch.h">
+      <Filter>Source Files\WebBrowser\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ArrayDispatch.h">
+      <Filter>Source Files\WebBrowser\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="jsMapInfos.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="osmReader.h">
+      <Filter>Source Files\Formats\OpenStreetMap</Filter>
+    </ClInclude>
+    <ClInclude Include="Javascript.h">
+      <Filter>Source Files\WebBrowser\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Variant.h">
+      <Filter>Source Files\WebBrowser\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="HttpRequest.h">
+      <Filter>Source Files\WebBrowser\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="AsyncRouteCalculation.h">
+      <Filter>Source Files\WebBrowser\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="FileFormat.h">
+      <Filter>Source Files\Formats</Filter>
+    </ClInclude>
+    <ClInclude Include="CustomizableDlg.h">
+      <Filter>Source Files\Dialog\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="BtnST.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="gpxDaimlerReader.h">
+      <Filter>Source Files\Formats\Daimler</Filter>
+    </ClInclude>
+    <ClInclude Include="xmlReader.h">
+      <Filter>Source Files\Formats\XML</Filter>
+    </ClInclude>
+    <ClInclude Include="jsProviderInfos.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="resource.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\hand.cur">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\source.axe">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\add.bmp">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\bird.bmp">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\car.bmp">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\clear_ca.bmp">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\clearcar.bmp">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\communicator_16.bmp">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\compass.bmp">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\config.bmp">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\down.bmp">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\earth.bmp">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\favorite.bmp">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\google_maps_16.bmp">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\invert.bmp">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\ITN Converter.ico">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\location.bmp">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\modify_16.bmp">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\navgate_16.bmp">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\navman_16.bmp">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\nvg_fresh_16.bmp">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\open_16.bmp">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\optimise.bmp">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\poi.bmp">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\proximity.bmp">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\rando.bmp">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\remove.bmp">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\remove_16.bmp">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\removeal.bmp">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\removeall.bmp">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\save_16.bmp">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\search.bmp">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\search_grayed.bmp">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\search_sel.bmp">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\tomtom_16.bmp">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\tomtom_home_16.bmp">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\up.bmp">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\Windows_Live_16.bmp">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\web\src\images\add.jpg">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\web\src\images\arrow_left.jpg">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\web\src\images\arrow_left_u.jpg">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\web\src\images\arrow_right.jpg">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\web\src\images\arrow_right_u.jpg">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\web\src\images\carb.jpg">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\web\src\images\del.jpg">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\web\src\images\distance.jpg">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\web\src\images\duration.jpg">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\web\src\images\favorite.jpg">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\web\src\images\garmin.jpg">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\web\src\images\navgate.jpg">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\web\src\images\navman.jpg">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\web\src\images\nvgfresh.jpg">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\web\src\images\park.jpg">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\web\src\images\parking_a.gif">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\web\src\images\parking_b.gif">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\web\src\images\pin.jpg">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\web\src\images\poi.jpg">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\web\src\images\search.jpg">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\web\src\images\target.jpg">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\web\src\images\tthome.jpg">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\web\src\images\web.jpg">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\web\src\images\zoom.jpg">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\web\src\images\roads.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\web\src\images\favorite.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\web\src\images\favorite_s.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\web\src\images\none.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\web\src\images\pois.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\web\src\images\road.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\source.est" />
+    <None Include="res\source.ptm" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="xp_theme.res">
+      <Filter>Resource Files</Filter>
+    </Resource>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="res\bike.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\bing.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\choose_icon.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\cloudmade.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\google.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\printer.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\truck.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\validate.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\viamichelin.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\waze.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\osm.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\here.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\tomtom.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\here_maps_16.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\selectall.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\unselectall.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\maps_icons.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+  </ItemGroup>
+</Project>

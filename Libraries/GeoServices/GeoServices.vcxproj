@@ -1,0 +1,336 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug Clang|Win32">
+      <Configuration>Debug Clang</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{6AE5A5F6-2410-4057-B073-37F6F63D87BC}</ProjectGuid>
+    <RootNamespace>GeoServices</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>NotSet</CharacterSet>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug Clang|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>NotSet</CharacterSet>
+    <PlatformToolset>ClangCL</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>NotSet</CharacterSet>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug Clang|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>10.0.40219.1</_ProjectFileVersion>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(BuildDir)$(Platform)\$(Configuration)\$(ProjectName)\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(OutDir)Obj\</IntDir>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(BuildDir)$(Platform)\$(Configuration)\$(ProjectName)\</OutDir>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug Clang|Win32'">$(BuildDir)$(Platform)\$(Configuration)\$(ProjectName)\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(OutDir)Obj\</IntDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug Clang|Win32'">$(OutDir)Obj\</IntDir>
+    <CodeAnalysisRuleSet Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">AllRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRuleSet Condition="'$(Configuration)|$(Platform)'=='Debug Clang|Win32'">AllRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRules Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" />
+    <CodeAnalysisRules Condition="'$(Configuration)|$(Platform)'=='Debug Clang|Win32'" />
+    <CodeAnalysisRuleAssemblies Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" />
+    <CodeAnalysisRuleAssemblies Condition="'$(Configuration)|$(Platform)'=='Debug Clang|Win32'" />
+    <CodeAnalysisRuleSet Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">AllRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRules Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" />
+    <CodeAnalysisRuleAssemblies Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" />
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <Optimization>MaxSpeed</Optimization>
+      <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <FavorSizeOrSpeed>Speed</FavorSizeOrSpeed>
+      <OmitFramePointers>true</OmitFramePointers>
+      <WholeProgramOptimization>true</WholeProgramOptimization>
+      <AdditionalIncludeDirectories>..;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <StringPooling>true</StringPooling>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <BufferSecurityCheck>false</BufferSecurityCheck>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <RuntimeTypeInfo>false</RuntimeTypeInfo>
+      <PrecompiledHeaderOutputFile>$(IntDir)$(ProjectName).pch</PrecompiledHeaderOutputFile>
+      <AssemblerListingLocation>
+      </AssemblerListingLocation>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <ProgramDataBaseFileName>$(IntDir)vc90.pdb</ProgramDataBaseFileName>
+      <WarningLevel>Level4</WarningLevel>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <EnableEnhancedInstructionSet>NoExtensions</EnableEnhancedInstructionSet>
+      <TreatWChar_tAsBuiltInType>false</TreatWChar_tAsBuiltInType>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <Culture>0x040c</Culture>
+    </ResourceCompile>
+    <Lib>
+      <OutputFile>$(OutDir)$(TargetName)$(TargetExt)</OutputFile>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+    </Lib>
+    <Bscmake>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <OutputFile>$(OutDir)$(ProjectName).bsc</OutputFile>
+    </Bscmake>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <Optimization>Disabled</Optimization>
+      <AdditionalIncludeDirectories>..;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_CRTDBG_MAP_ALLOC;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MinimalRebuild>false</MinimalRebuild>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+      <FloatingPointModel>Precise</FloatingPointModel>
+      <RuntimeTypeInfo>false</RuntimeTypeInfo>
+      <PrecompiledHeaderOutputFile>$(IntDir)$(ProjectName).pch</PrecompiledHeaderOutputFile>
+      <AssemblerListingLocation>
+      </AssemblerListingLocation>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <ProgramDataBaseFileName>$(IntDir)vc90.pdb</ProgramDataBaseFileName>
+      <BrowseInformation>true</BrowseInformation>
+      <WarningLevel>Level4</WarningLevel>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <CallingConvention>Cdecl</CallingConvention>
+      <EnableEnhancedInstructionSet>NoExtensions</EnableEnhancedInstructionSet>
+      <TreatWChar_tAsBuiltInType>false</TreatWChar_tAsBuiltInType>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <Culture>0x040c</Culture>
+    </ResourceCompile>
+    <Lib>
+      <OutputFile>$(OutDir)$(TargetName)$(TargetExt)</OutputFile>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+    </Lib>
+    <Bscmake>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <OutputFile>$(OutDir)$(ProjectName).bsc</OutputFile>
+      <PreserveSbr>true</PreserveSbr>
+    </Bscmake>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug Clang|Win32'">
+    <ClCompile>
+      <Optimization>Disabled</Optimization>
+      <AdditionalIncludeDirectories>..;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_CRTDBG_MAP_ALLOC;_LIB;_HAS_EXCEPTIONS=0;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MinimalRebuild>
+      </MinimalRebuild>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+      <FloatingPointModel>
+      </FloatingPointModel>
+      <RuntimeTypeInfo>false</RuntimeTypeInfo>
+      <PrecompiledHeaderOutputFile>$(IntDir)$(ProjectName).pch</PrecompiledHeaderOutputFile>
+      <AssemblerListingLocation>
+      </AssemblerListingLocation>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <ProgramDataBaseFileName>
+      </ProgramDataBaseFileName>
+      <BrowseInformation>
+      </BrowseInformation>
+      <WarningLevel>Level4</WarningLevel>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <CallingConvention>
+      </CallingConvention>
+      <EnableEnhancedInstructionSet>NoExtensions</EnableEnhancedInstructionSet>
+      <TreatWChar_tAsBuiltInType>
+      </TreatWChar_tAsBuiltInType>
+      <BufferSecurityCheck />
+      <AdditionalOptions>-Weverything -Wno-c++98-compat -Wno-c++98-compat-pedantic  -Wno-weak-vtables -Wno-global-constructors -Wno-exit-time-destructors -Wno-reserved-id-macro -Wno-deprecated %(AdditionalOptions)</AdditionalOptions>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <Culture>0x040c</Culture>
+    </ResourceCompile>
+    <Lib>
+      <OutputFile>$(OutDir)$(TargetName)$(TargetExt)</OutputFile>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+    </Lib>
+    <Bscmake>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <OutputFile>$(OutDir)$(ProjectName).bsc</OutputFile>
+    </Bscmake>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClInclude Include="GeoBaseDirections.h" />
+    <ClInclude Include="GeoBaseLocalSearch.h" />
+    <ClInclude Include="GeoLatLngDegrees.h" />
+    <ClInclude Include="GeoNamesCountryCode.h" />
+    <ClInclude Include="GeoNamesCountryinfo.h" />
+    <ClInclude Include="GeoNamesTools.h" />
+    <ClInclude Include="GeoPortalApiDirections.h" />
+    <ClInclude Include="GeoPortalTools.h" />
+    <ClInclude Include="GeoRouteOptions.h" />
+    <ClInclude Include="GoogleApiDirections.h" />
+    <ClInclude Include="GoogleApiElevation.h" />
+    <ClInclude Include="GoogleApiGeocoder.h" />
+    <ClInclude Include="GoogleApiRvsGeocoder.h" />
+    <ClInclude Include="GoogleApiLocalSearch.h" />
+    <ClInclude Include="GoogleStreetView.h" />
+    <ClInclude Include="GoogleTools.h" />
+    <ClInclude Include="GoogleUrl.h" />
+    <ClInclude Include="BingApiDirections.h" />
+    <ClInclude Include="BingApiGeocoder.h" />
+    <ClInclude Include="BingApiRvsGeocoder.h" />
+    <ClInclude Include="BingTools.h" />
+    <ClInclude Include="GeoServices.h" />
+    <ClInclude Include="GeoApi.h" />
+    <ClInclude Include="GeoDirections.h" />
+    <ClInclude Include="GeoDirectionsFactory.h" />
+    <ClInclude Include="GeoElevation.h" />
+    <ClInclude Include="GeoFactory.h" />
+    <ClInclude Include="GeoGeocoder.h" />
+    <ClInclude Include="GeoGeocoderFactory.h" />
+    <ClInclude Include="GeoIP.h" />
+    <ClInclude Include="GeoLatLng.h" />
+    <ClInclude Include="GeoLatLngBounds.h" />
+    <ClInclude Include="GeoLatLngs.h" />
+    <ClInclude Include="GeoLocalSearch.h" />
+    <ClInclude Include="GeoLocalSearchFactory.h" />
+    <ClInclude Include="GeoLocation.h" />
+    <ClInclude Include="GeoLocations.h" />
+    <ClInclude Include="GeoMercatorXY.h" />
+    <ClInclude Include="GeoPoint.h" />
+    <ClInclude Include="GeoPolygone.h" />
+    <ClInclude Include="GeoPolyline.h" />
+    <ClInclude Include="GeoRoute.h" />
+    <ClInclude Include="GeoRvsGeocoder.h" />
+    <ClInclude Include="GeoRvsGeocoderFactory.h" />
+    <ClInclude Include="GeoStep.h" />
+    <ClInclude Include="GeoSummary.h" />
+    <ClInclude Include="HereApi.h" />
+    <ClInclude Include="HereApiDirections.h" />
+    <ClInclude Include="HereApiGeocoder.h" />
+    <ClInclude Include="HereApiLocalSearch.h" />
+    <ClInclude Include="HereApiRvsGeocoder.h" />
+    <ClInclude Include="HereUrl.h" />
+    <ClInclude Include="ManualDirections.h" />
+    <ClInclude Include="OpenRouteServiceApiDirections.h" />
+    <ClInclude Include="OSRMApiDirections.h" />
+    <ClInclude Include="TomtomApiDirections.h" />
+    <ClInclude Include="TomtomApiGeocoder.h" />
+    <ClInclude Include="TomtomApiRvsGeocoder.h" />
+    <ClInclude Include="TomtomTools.h" />
+    <ClInclude Include="TomtomUrl.h" />
+    <ClInclude Include="ViaMichelinApiDirections.h" />
+    <ClInclude Include="ViaMichelinApiGeocoder.h" />
+    <ClInclude Include="ViaMichelinApiLocation.h" />
+    <ClInclude Include="ViaMichelinApiRvsGeocoder.h" />
+    <ClInclude Include="ViaMichelinTools.h" />
+    <ClInclude Include="CloudMadeApiDirections.h" />
+    <ClInclude Include="CloudMadeTools.h" />
+    <ClInclude Include="ViaMichelinUrl.h" />
+    <ClInclude Include="WazeMapRvsGeocoder.h" />
+    <ClInclude Include="WazeMapCountriesByBox.h" />
+    <ClInclude Include="WazeMapDirections.h" />
+    <ClInclude Include="WazeMapGeocoder.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="GeoApi.cpp" />
+    <ClCompile Include="GeoBaseDirections.cpp" />
+    <ClCompile Include="GeoBaseLocalSearch.cpp" />
+    <ClCompile Include="GeoLatLngDegrees.cpp" />
+    <ClCompile Include="GeoNamesCountryCode.cpp" />
+    <ClCompile Include="GeoNamesCountryinfo.cpp" />
+    <ClCompile Include="GeoNamesTools.cpp" />
+    <ClCompile Include="GeoPortalApiDirections.cpp" />
+    <ClCompile Include="GeoPortalTools.cpp" />
+    <ClCompile Include="GeoRouteOptions.cpp" />
+    <ClCompile Include="GoogleApiDirections.cpp" />
+    <ClCompile Include="GoogleApiElevation.cpp" />
+    <ClCompile Include="GoogleApiGeocoder.cpp" />
+    <ClCompile Include="GoogleApiRvsGeocoder.cpp" />
+    <ClCompile Include="GoogleApiLocalSearch.cpp" />
+    <ClCompile Include="GoogleStreetView.cpp" />
+    <ClCompile Include="GoogleTools.cpp" />
+    <ClCompile Include="GoogleUrl.cpp" />
+    <ClCompile Include="BingApiDirections.cpp" />
+    <ClCompile Include="BingApiGeocoder.cpp" />
+    <ClCompile Include="BingApiRvsGeocoder.cpp" />
+    <ClCompile Include="BingTools.cpp" />
+    <ClCompile Include="GeoDirectionsFactory.cpp" />
+    <ClCompile Include="GeoGeocoderFactory.cpp" />
+    <ClCompile Include="GeoLatLng.cpp" />
+    <ClCompile Include="GeoLatLngs.cpp" />
+    <ClCompile Include="GeoLocalSearchFactory.cpp" />
+    <ClCompile Include="GeoLocation.cpp" />
+    <ClCompile Include="GeoLocations.cpp" />
+    <ClCompile Include="GeoMercatorXY.cpp" />
+    <ClCompile Include="GeoPoint.cpp" />
+    <ClCompile Include="GeoPolygone.cpp" />
+    <ClCompile Include="GeoPolyline.cpp" />
+    <ClCompile Include="GeoRoute.cpp" />
+    <ClCompile Include="GeoRvsGeocoderFactory.cpp" />
+    <ClCompile Include="GeoStep.cpp" />
+    <ClCompile Include="GeoSummary.cpp" />
+    <ClCompile Include="HereApiDirections.cpp" />
+    <ClCompile Include="HereApiGeocoder.cpp" />
+    <ClCompile Include="HereApiLocalSearch.cpp" />
+    <ClCompile Include="HereApiRvsGeocoder.cpp" />
+    <ClCompile Include="HereUrl.cpp" />
+    <ClCompile Include="ManualDirections.cpp" />
+    <ClCompile Include="OpenRouteServiceApiDirections.cpp" />
+    <ClCompile Include="OSRMApiDirections.cpp" />
+    <ClCompile Include="TomtomApiDirections.cpp" />
+    <ClCompile Include="TomtomApiGeocoder.cpp" />
+    <ClCompile Include="TomtomApiRvsGeocoder.cpp" />
+    <ClCompile Include="TomtomTools.cpp" />
+    <ClCompile Include="TomtomUrl.cpp" />
+    <ClCompile Include="ViaMichelinApiDirections.cpp" />
+    <ClCompile Include="ViaMichelinApiGeocoder.cpp" />
+    <ClCompile Include="ViaMichelinApiLocation.cpp" />
+    <ClCompile Include="ViaMichelinApiRvsGeocoder.cpp" />
+    <ClCompile Include="ViaMichelinTools.cpp" />
+    <ClCompile Include="CloudMadeApiDirections.cpp" />
+    <ClCompile Include="CloudMadeTools.cpp" />
+    <ClCompile Include="ViamichelinUrl.cpp" />
+    <ClCompile Include="WazeMapRvsGeocoder.cpp" />
+    <ClCompile Include="WazeMapCountriesByBox.cpp" />
+    <ClCompile Include="WazeMapDirections.cpp" />
+    <ClCompile Include="WazeMapGeocoder.cpp" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

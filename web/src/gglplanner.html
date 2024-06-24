@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<script>
+			function LoadScript(src) {document.write('<script src="' + src + '" type="text/javascript"><\/script>');}
+			LoadScript("scripts/GLoadApi.js");
+		</script>
+		<style type="text/css">
+			@import url("styles/style.css");
+		</style>
+	</head>
+	<body oncontextmenu="return false;">
+		<!--[if (lt IE 9)]>
+		<center><h1>ITN Converter use Internet Explorer engine and need at least Internet Explorer 9 for running properly.</h1></center>
+		<![endif]-->
+
+		<!--[if (gte IE 9)|!(IE)]><!-->
+		<div id="map-canvas" style="position:absolute;left:0px;top:0px;height:100%;width:100%;"></div>
+		<script>
+			var _VERSION = '1.94';
+			var _SITE_URL = 'http://www.benichou-software.com';
+			LoadScript("scripts/External.js");
+			LoadScript("scripts/Planner.js");
+		</script>
+		<!--<![endif]-->
+	</body>
+</html>

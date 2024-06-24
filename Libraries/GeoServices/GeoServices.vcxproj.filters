@@ -1,0 +1,542 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="GeoNames">
+      <UniqueIdentifier>{3feeef66-c6bc-41fe-8910-dcd7a39c6825}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GeoNames\Header Files">
+      <UniqueIdentifier>{8157d14c-e8d9-48ff-8b41-b4b248a3a8b9}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl</Extensions>
+    </Filter>
+    <Filter Include="GeoNames\Source Files">
+      <UniqueIdentifier>{e39a8f28-205b-4a55-899e-62def27f08aa}</UniqueIdentifier>
+      <Extensions>cpp;c;cxx;rc;def;r;odl;idl;hpj;bat</Extensions>
+    </Filter>
+    <Filter Include="Google">
+      <UniqueIdentifier>{fbf7ccbc-cf45-4ea5-b7e2-633af202f5ca}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Google\Header Files">
+      <UniqueIdentifier>{601d6295-b695-4fd5-9f21-765ab0c8fb9c}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl</Extensions>
+    </Filter>
+    <Filter Include="Google\Source Files">
+      <UniqueIdentifier>{8a7d84a9-9a3d-433b-a72d-b7faa6fad57e}</UniqueIdentifier>
+      <Extensions>cpp;c;cxx;rc;def;r;odl;idl;hpj;bat</Extensions>
+    </Filter>
+    <Filter Include="Bing">
+      <UniqueIdentifier>{886b3590-a21d-4058-a4ec-5577ec14718b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Bing\Header Files">
+      <UniqueIdentifier>{3d87427d-db04-46a0-9648-442f220a3714}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl</Extensions>
+    </Filter>
+    <Filter Include="Bing\Source Files">
+      <UniqueIdentifier>{85fd24fd-ad73-4378-ab03-12b4edbffb57}</UniqueIdentifier>
+      <Extensions>cpp;c;cxx;rc;def;r;odl;idl;hpj;bat</Extensions>
+    </Filter>
+    <Filter Include="Api">
+      <UniqueIdentifier>{00d483d3-465f-4214-8b53-92f8f702b5ae}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Api\Source Files">
+      <UniqueIdentifier>{1232a6f1-c410-4598-b61f-3992778a63f9}</UniqueIdentifier>
+      <Extensions>cpp;c;cxx;rc;def;r;odl;idl;hpj;bat</Extensions>
+    </Filter>
+    <Filter Include="Api\Header Files">
+      <UniqueIdentifier>{1240bb3f-1d22-4dbb-84f8-039e7e63aab6}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl</Extensions>
+    </Filter>
+    <Filter Include="TomTom">
+      <UniqueIdentifier>{b8a772c4-07c6-4e5c-8ae1-60db71e1f14e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="TomTom\Header Files">
+      <UniqueIdentifier>{b7b097df-0a7b-4d96-8efa-f4a4ff3c2f28}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl</Extensions>
+    </Filter>
+    <Filter Include="TomTom\Source Files">
+      <UniqueIdentifier>{5fcd94ca-a330-44d5-b56e-4d55e6f16653}</UniqueIdentifier>
+      <Extensions>cpp;c;cxx;rc;def;r;odl;idl;hpj;bat</Extensions>
+    </Filter>
+    <Filter Include="Viamichelin">
+      <UniqueIdentifier>{d075090d-72a2-47f7-9448-4c0ea403a268}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Viamichelin\Header Files">
+      <UniqueIdentifier>{e0eaf8be-afd7-46d7-8d56-5d7288a246a9}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl</Extensions>
+    </Filter>
+    <Filter Include="Viamichelin\Source Files">
+      <UniqueIdentifier>{a4260c0d-bbc9-4ae4-bb50-092d643ea3d6}</UniqueIdentifier>
+      <Extensions>cpp;c;cxx;rc;def;r;odl;idl;hpj;bat</Extensions>
+    </Filter>
+    <Filter Include="CloudMade">
+      <UniqueIdentifier>{759bd64f-a39e-4250-95e4-72f78e8383b1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="CloudMade\Source Files">
+      <UniqueIdentifier>{12f532bc-e16b-47f1-be2c-9070760d0cc5}</UniqueIdentifier>
+      <Extensions>cpp;c;cxx;rc;def;r;odl;idl;hpj;bat</Extensions>
+    </Filter>
+    <Filter Include="CloudMade\Header Files">
+      <UniqueIdentifier>{d83d4bc1-5ce9-4816-8551-764c7feeeb07}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl</Extensions>
+    </Filter>
+    <Filter Include="GeoPortal">
+      <UniqueIdentifier>{742efafc-e1f0-4dde-ba77-2a3929ac717c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GeoPortal\Header Files">
+      <UniqueIdentifier>{f5eb6dd4-3111-485e-bc03-9baec35bdf63}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GeoPortal\Source Files">
+      <UniqueIdentifier>{c9abf295-67e9-4b20-81b7-c1bc613e2844}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Waze">
+      <UniqueIdentifier>{7eb32e07-089a-4539-8489-e08867352b28}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Waze\Header Files">
+      <UniqueIdentifier>{ff55a395-9bdf-49f2-81fe-87f0c8a31ad3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Waze\Source Files">
+      <UniqueIdentifier>{3120b092-6c09-4028-9e9f-76f1b751317f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Here">
+      <UniqueIdentifier>{b276d3e0-9a7e-433c-a41f-e114862b0168}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Here\Header Files">
+      <UniqueIdentifier>{afe78c3c-491f-45db-83e4-65c37428be81}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Here\Source Files">
+      <UniqueIdentifier>{6699f0ef-9a84-456a-95f4-4912f9ebfe40}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Core">
+      <UniqueIdentifier>{7ee31ef5-ba67-4aa8-a17b-ac9bbc8a2246}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Core\Header Files">
+      <UniqueIdentifier>{6a470db7-9164-46e5-8548-4366171b4eda}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Core\Source Files">
+      <UniqueIdentifier>{3e3047f7-bd02-4689-80eb-ce3ccbdd4842}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="OSRM">
+      <UniqueIdentifier>{08ea5bbd-1b9f-40cd-b629-a097bc7c69df}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="OSRM\Header Files">
+      <UniqueIdentifier>{c4405228-02ed-4e61-aed3-a0d28b5d2bf2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="OSRM\Source Files">
+      <UniqueIdentifier>{11e9c60a-359e-4385-b93f-6e673268bc74}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="OpenRouteService">
+      <UniqueIdentifier>{3f354b6f-54fb-4a84-9442-f36b2241b137}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="OpenRouteService\Header Files">
+      <UniqueIdentifier>{c0006903-5ff8-4c41-832e-ff734d9c6a96}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="OpenRouteService\Source Files">
+      <UniqueIdentifier>{0c5c044f-a2e7-4227-be9e-e52b37c99e9b}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="GeoNamesCountryCode.h">
+      <Filter>GeoNames\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="GeoNamesCountryinfo.h">
+      <Filter>GeoNames\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="GeoNamesTools.h">
+      <Filter>GeoNames\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="GoogleApiDirections.h">
+      <Filter>Google\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="GoogleApiElevation.h">
+      <Filter>Google\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="GoogleApiGeocoder.h">
+      <Filter>Google\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="GoogleApiRvsGeocoder.h">
+      <Filter>Google\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="GoogleStreetView.h">
+      <Filter>Google\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="GoogleTools.h">
+      <Filter>Google\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="GoogleUrl.h">
+      <Filter>Google\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="BingApiDirections.h">
+      <Filter>Bing\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="BingApiGeocoder.h">
+      <Filter>Bing\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="BingApiRvsGeocoder.h">
+      <Filter>Bing\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="BingTools.h">
+      <Filter>Bing\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="GeoServices.h">
+      <Filter>Api</Filter>
+    </ClInclude>
+    <ClInclude Include="GeoApi.h">
+      <Filter>Api\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="GeoDirections.h">
+      <Filter>Api\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="GeoDirectionsFactory.h">
+      <Filter>Api\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="GeoFactory.h">
+      <Filter>Api\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="GeoGeocoder.h">
+      <Filter>Api\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="GeoGeocoderFactory.h">
+      <Filter>Api\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="GeoIP.h">
+      <Filter>Api\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="GeoRvsGeocoder.h">
+      <Filter>Api\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="GeoRvsGeocoderFactory.h">
+      <Filter>Api\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="TomtomTools.h">
+      <Filter>TomTom\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ViaMichelinApiDirections.h">
+      <Filter>Viamichelin\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ViaMichelinApiGeocoder.h">
+      <Filter>Viamichelin\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ViaMichelinApiRvsGeocoder.h">
+      <Filter>Viamichelin\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ViaMichelinTools.h">
+      <Filter>Viamichelin\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CloudMadeApiDirections.h">
+      <Filter>CloudMade\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CloudMadeTools.h">
+      <Filter>CloudMade\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="WazeMapCountriesByBox.h">
+      <Filter>Waze\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="WazeMapDirections.h">
+      <Filter>Waze\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="WazeMapGeocoder.h">
+      <Filter>Waze\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="HereApi.h">
+      <Filter>Here\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="HereApiGeocoder.h">
+      <Filter>Here\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="HereApiRvsGeocoder.h">
+      <Filter>Here\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="HereApiDirections.h">
+      <Filter>Here\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="GeoLatLng.h">
+      <Filter>Core\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="GeoLatLngBounds.h">
+      <Filter>Core\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="GeoLatLngDegrees.h">
+      <Filter>Core\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="GeoLatLngs.h">
+      <Filter>Core\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="GeoLocation.h">
+      <Filter>Core\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="GeoLocations.h">
+      <Filter>Core\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="GeoMercatorXY.h">
+      <Filter>Core\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="GeoPoint.h">
+      <Filter>Core\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="GeoPolygone.h">
+      <Filter>Core\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="GeoPolyline.h">
+      <Filter>Core\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="GeoRoute.h">
+      <Filter>Core\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="GeoStep.h">
+      <Filter>Core\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="GeoSummary.h">
+      <Filter>Core\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ManualDirections.h">
+      <Filter>Core\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="GeoElevation.h">
+      <Filter>Core\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="GeoBaseDirections.h">
+      <Filter>Api\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="HereUrl.h">
+      <Filter>Here\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="OSRMApiDirections.h">
+      <Filter>OSRM\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="OpenRouteServiceApiDirections.h">
+      <Filter>OpenRouteService\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="GoogleApiLocalSearch.h">
+      <Filter>Google\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="GeoLocalSearch.h">
+      <Filter>Api\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="GeoLocalSearchFactory.h">
+      <Filter>Api\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="GeoBaseLocalSearch.h">
+      <Filter>Api\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="HereApiLocalSearch.h">
+      <Filter>Here\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="TomtomApiDirections.h">
+      <Filter>TomTom\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="GeoRouteOptions.h">
+      <Filter>Api\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ViaMichelinApiLocation.h">
+      <Filter>Viamichelin\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ViaMichelinUrl.h">
+      <Filter>Viamichelin\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="TomtomUrl.h">
+      <Filter>TomTom\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="TomtomApiRvsGeocoder.h">
+      <Filter>TomTom\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="GeoPortalApiDirections.h">
+      <Filter>GeoPortal\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="GeoPortalTools.h">
+      <Filter>GeoPortal\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="WazeMapRvsGeocoder.h">
+      <Filter>Waze\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="TomtomApiGeocoder.h">
+      <Filter>TomTom\Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="GeoNamesCountryCode.cpp">
+      <Filter>GeoNames\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="GeoNamesCountryinfo.cpp">
+      <Filter>GeoNames\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="GeoNamesTools.cpp">
+      <Filter>GeoNames\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="GoogleApiDirections.cpp">
+      <Filter>Google\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="GoogleApiElevation.cpp">
+      <Filter>Google\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="GoogleApiGeocoder.cpp">
+      <Filter>Google\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="GoogleApiRvsGeocoder.cpp">
+      <Filter>Google\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="GoogleStreetView.cpp">
+      <Filter>Google\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="GoogleTools.cpp">
+      <Filter>Google\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="GoogleUrl.cpp">
+      <Filter>Google\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="BingApiDirections.cpp">
+      <Filter>Bing\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="BingApiGeocoder.cpp">
+      <Filter>Bing\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="BingApiRvsGeocoder.cpp">
+      <Filter>Bing\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="BingTools.cpp">
+      <Filter>Bing\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="GeoDirectionsFactory.cpp">
+      <Filter>Api\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="GeoGeocoderFactory.cpp">
+      <Filter>Api\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="GeoRvsGeocoderFactory.cpp">
+      <Filter>Api\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="TomtomTools.cpp">
+      <Filter>TomTom\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ViaMichelinApiDirections.cpp">
+      <Filter>Viamichelin\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ViaMichelinApiGeocoder.cpp">
+      <Filter>Viamichelin\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ViaMichelinApiRvsGeocoder.cpp">
+      <Filter>Viamichelin\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ViaMichelinTools.cpp">
+      <Filter>Viamichelin\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CloudMadeApiDirections.cpp">
+      <Filter>CloudMade\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CloudMadeTools.cpp">
+      <Filter>CloudMade\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="WazeMapCountriesByBox.cpp">
+      <Filter>Waze\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="WazeMapDirections.cpp">
+      <Filter>Waze\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="WazeMapGeocoder.cpp">
+      <Filter>Waze\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="HereApiGeocoder.cpp">
+      <Filter>Here\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="HereApiRvsGeocoder.cpp">
+      <Filter>Here\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="HereApiDirections.cpp">
+      <Filter>Here\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="GeoLatLng.cpp">
+      <Filter>Core\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="GeoLatLngDegrees.cpp">
+      <Filter>Core\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="GeoLatLngs.cpp">
+      <Filter>Core\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="GeoLocation.cpp">
+      <Filter>Core\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="GeoLocations.cpp">
+      <Filter>Core\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="GeoMercatorXY.cpp">
+      <Filter>Core\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="GeoPoint.cpp">
+      <Filter>Core\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="GeoPolygone.cpp">
+      <Filter>Core\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="GeoPolyline.cpp">
+      <Filter>Core\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="GeoRoute.cpp">
+      <Filter>Core\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="GeoStep.cpp">
+      <Filter>Core\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="GeoSummary.cpp">
+      <Filter>Core\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ManualDirections.cpp">
+      <Filter>Core\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="GeoBaseDirections.cpp">
+      <Filter>Api\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="HereUrl.cpp">
+      <Filter>Here\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="OSRMApiDirections.cpp">
+      <Filter>OSRM\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="OpenRouteServiceApiDirections.cpp">
+      <Filter>OpenRouteService\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="GoogleApiLocalSearch.cpp">
+      <Filter>Google\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="GeoLocalSearchFactory.cpp">
+      <Filter>Api\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="GeoBaseLocalSearch.cpp">
+      <Filter>Api\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="HereApiLocalSearch.cpp">
+      <Filter>Here\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="TomtomApiDirections.cpp">
+      <Filter>TomTom\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="GeoRouteOptions.cpp">
+      <Filter>Api\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="GeoApi.cpp">
+      <Filter>Api\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ViaMichelinApiLocation.cpp">
+      <Filter>Viamichelin\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ViamichelinUrl.cpp">
+      <Filter>Viamichelin\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="TomtomUrl.cpp">
+      <Filter>TomTom\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="TomtomApiRvsGeocoder.cpp">
+      <Filter>TomTom\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="GeoPortalApiDirections.cpp">
+      <Filter>GeoPortal\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="GeoPortalTools.cpp">
+      <Filter>GeoPortal\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="WazeMapRvsGeocoder.cpp">
+      <Filter>Waze\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="TomtomApiGeocoder.cpp">
+      <Filter>TomTom\Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>
